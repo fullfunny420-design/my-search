@@ -1,11 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>MySearch</title>
 
 <style>
+
+/* =========================================================
+   RESET
+========================================================= */
+
 * {
     box-sizing: border-box;
 }
@@ -32,25 +39,26 @@ body.dark {
     color: #e8eaed;
 }
 
+button,
+input {
+    font-family: inherit;
+}
+
+
 /* =========================================================
    TOP BAR
 ========================================================= */
 
 .topbar {
-    height: 64px;
-    width: 100%;
-
+    height: 62px;
     display: flex;
     align-items: center;
-
-    padding: 0 18px;
-
-    background: #fff;
+    padding: 0 22px;
     border-bottom: 1px solid #e5e5e5;
-
+    background: #fff;
     position: sticky;
     top: 0;
-    z-index: 5000;
+    z-index: 1000;
 }
 
 body.dark .topbar {
@@ -58,28 +66,27 @@ body.dark .topbar {
     border-color: #3c4043;
 }
 
+
 /* LEFT */
 
 .top-left {
     display: flex;
     align-items: center;
-    gap: 4px;
-
-    min-width: 230px;
+    gap: 5px;
+    min-width: 210px;
 }
 
-.nav-btn {
-    width: 40px;
-    height: 40px;
 
+/* NAV BUTTON */
+
+.nav-btn {
+    width: 38px;
+    height: 38px;
     border: 0;
     border-radius: 50%;
-
     background: transparent;
     color: #5f6368;
-
-    font-size: 22px;
-
+    font-size: 21px;
     cursor: pointer;
 }
 
@@ -95,35 +102,38 @@ body.dark .nav-btn:hover {
     background: #303134;
 }
 
+
 /* LOGO */
 
 .logo {
-    margin-left: 8px;
-
+    margin-left: 7px;
     font-size: 25px;
     font-weight: bold;
-
     letter-spacing: -1.5px;
-
     cursor: pointer;
     white-space: nowrap;
 }
 
-.logo .b {
+.logo .b,
+.home-logo .b {
     color: #4285f4;
 }
 
-.logo .r {
+.logo .r,
+.home-logo .r {
     color: #ea4335;
 }
 
-.logo .y {
+.logo .y,
+.home-logo .y {
     color: #fbbc05;
 }
 
-.logo .g {
+.logo .g,
+.home-logo .g {
     color: #34a853;
 }
+
 
 /* =========================================================
    TOP SEARCH
@@ -131,25 +141,20 @@ body.dark .nav-btn:hover {
 
 .top-search-area {
     flex: 1;
-
     display: flex;
-    justify-content: flex-start;
-
-    padding: 0 25px;
+    justify-content: center;
+    padding: 0 20px;
 }
 
 .top-search {
-    width: min(680px, 100%);
+    width: min(650px, 100%);
     height: 46px;
-
+    border: 1px solid #dfe1e5;
+    border-radius: 24px;
     display: flex;
     align-items: center;
-
     padding: 0 14px;
-
     background: #fff;
-    border: 1px solid #dfe1e5;
-    border-radius: 25px;
 }
 
 body.dark .top-search {
@@ -158,147 +163,107 @@ body.dark .top-search {
 }
 
 .top-search:focus-within {
-    box-shadow: 0 1px 6px rgba(32,33,36,.2);
+    box-shadow: 0 1px 6px rgba(32,33,36,.18);
 }
 
 .top-search-icon {
-    margin-right: 10px;
     color: #70757a;
     font-size: 18px;
+    margin-right: 10px;
 }
 
 .top-search input {
     flex: 1;
-
     min-width: 0;
-
     border: 0;
     outline: 0;
-
     background: transparent;
     color: inherit;
-
     font-size: 16px;
 }
 
 .top-search-clear {
-    display: none;
-
     border: 0;
     background: transparent;
-
     color: #70757a;
-
     font-size: 20px;
+    cursor: pointer;
+    display: none;
+}
 
+.top-search-button {
+    border: 0;
+    background: transparent;
+    color: #4285f4;
+    font-size: 19px;
     cursor: pointer;
 }
 
-/* =========================================================
-   TOP RIGHT
-========================================================= */
+
+/* RIGHT */
 
 .top-right {
+    min-width: 210px;
     display: flex;
+    justify-content: flex-end;
     align-items: center;
-    gap: 8px;
+    gap: 4px;
 }
 
-.top-link {
+.top-btn {
     border: 0;
     background: transparent;
-
-    color: #5f6368;
-
+    color: inherit;
+    padding: 9px 12px;
+    border-radius: 7px;
     cursor: pointer;
-
-    font-size: 14px;
-
-    padding: 8px 10px;
 }
 
-.top-link:hover {
+.top-btn:hover {
     background: #f1f3f4;
-    border-radius: 5px;
 }
 
-body.dark .top-link {
-    color: #bdc1c6;
-}
-
-body.dark .top-link:hover {
+body.dark .top-btn:hover {
     background: #303134;
 }
+
 
 /* =========================================================
    HOME
 ========================================================= */
 
 .home {
-    min-height: calc(100vh - 64px);
-
+    min-height: calc(100vh - 62px);
     display: flex;
     flex-direction: column;
     align-items: center;
-
-    padding-top: 120px;
+    padding-top: 15vh;
 }
 
 .home-logo {
-    font-size: 72px;
+    font-size: 64px;
     font-weight: bold;
-
-    letter-spacing: -5px;
-
-    margin-bottom: 35px;
-
-    user-select: none;
+    letter-spacing: -4px;
+    margin-bottom: 30px;
 }
 
-.home-logo .b {
-    color: #4285f4;
-}
 
-.home-logo .r {
-    color: #ea4335;
-}
-
-.home-logo .y {
-    color: #fbbc05;
-}
-
-.home-logo .g {
-    color: #34a853;
-}
-
-/* =========================================================
-   HOME SEARCH
-========================================================= */
+/* HOME SEARCH */
 
 .home-search-area {
-    width: min(650px, 92vw);
-
+    width: min(650px, 94vw);
     position: relative;
 }
 
 .home-search {
     width: 100%;
-    height: 52px;
-
-    display: flex;
-    align-items: center;
-
-    padding: 0 18px;
-
+    height: 53px;
     border: 1px solid #dfe1e5;
     border-radius: 28px;
-
+    display: flex;
+    align-items: center;
+    padding: 0 17px;
     background: #fff;
-}
-
-.home-search:hover,
-.home-search:focus-within {
-    box-shadow: 0 1px 8px rgba(32,33,36,.18);
 }
 
 body.dark .home-search {
@@ -306,164 +271,34 @@ body.dark .home-search {
     border-color: #5f6368;
 }
 
+.home-search:focus-within {
+    box-shadow: 0 1px 6px rgba(32,33,36,.2);
+}
+
 .home-search-icon {
     color: #70757a;
-
     font-size: 20px;
-
-    margin-right: 12px;
+    margin-right: 11px;
 }
 
 .home-search input {
     flex: 1;
-
-    min-width: 0;
-
     border: 0;
     outline: 0;
-
     background: transparent;
     color: inherit;
-
     font-size: 17px;
 }
 
 .home-clear {
-    display: none;
-
     border: 0;
     background: transparent;
-
     color: #70757a;
-
     font-size: 21px;
-
     cursor: pointer;
-
-    margin-right: 5px;
-}
-
-/* =========================================================
-   HISTORY
-========================================================= */
-
-.history-box {
     display: none;
-
-    width: min(650px, 94vw);
-
-    margin-top: 10px;
-
-    background: #fff;
-
-    border: 1px solid #dadce0;
-
-    border-radius: 12px;
-
-    box-shadow: 0 4px 12px rgba(0,0,0,.12);
-
-    overflow: hidden;
-
-    position: relative;
-
-    z-index: 100;
 }
 
-body.dark .history-box {
-    background: #303134;
-    border-color: #5f6368;
-}
-
-.history-title {
-    padding: 13px 16px;
-
-    font-size: 13px;
-    font-weight: bold;
-
-    color: #5f6368;
-
-    border-bottom: 1px solid #eee;
-}
-
-body.dark .history-title {
-    color: #bdc1c6;
-    border-color: #3c4043;
-}
-
-.history-item {
-    display: flex;
-    align-items: center;
-
-    gap: 12px;
-
-    padding: 12px 16px;
-
-    cursor: pointer;
-
-    font-size: 15px;
-}
-
-.history-item:hover {
-    background: #f8f9fa;
-}
-
-body.dark .history-item:hover {
-    background: #3c4043;
-}
-
-.history-clock {
-    color: #70757a;
-}
-
-.history-text {
-    flex: 1;
-
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-}
-
-.history-delete {
-    border: 0;
-    background: transparent;
-
-    color: #70757a;
-
-    cursor: pointer;
-
-    font-size: 16px;
-}
-
-.history-delete:hover {
-    color: #202124;
-}
-
-body.dark .history-delete:hover {
-    color: #fff;
-}
-
-.history-footer {
-    padding: 10px 16px;
-
-    border-top: 1px solid #eee;
-
-    text-align: right;
-}
-
-body.dark .history-footer {
-    border-color: #3c4043;
-}
-
-.clear-history {
-    border: 0;
-    background: transparent;
-
-    color: #4285f4;
-
-    cursor: pointer;
-
-    font-size: 13px;
-}
 
 /* =========================================================
    SUGGESTIONS
@@ -471,27 +306,16 @@ body.dark .history-footer {
 
 .suggestions {
     display: none;
-
-    width: min(650px, 94vw);
-
-    margin-top: 6px;
-
-    background: #fff;
-
-    border: 1px solid #dadce0;
-
-    border-radius: 12px;
-
-    overflow: hidden;
-
-    box-shadow: 0 4px 12px rgba(0,0,0,.12);
-
     position: absolute;
-
-    top: 57px;
     left: 0;
-
-    z-index: 200;
+    right: 0;
+    top: 58px;
+    background: #fff;
+    border: 1px solid #dfe1e5;
+    border-radius: 12px;
+    overflow: hidden;
+    z-index: 2000;
+    box-shadow: 0 4px 12px rgba(0,0,0,.14);
 }
 
 body.dark .suggestions {
@@ -500,20 +324,84 @@ body.dark .suggestions {
 }
 
 .suggestion-item {
-    padding: 11px 16px;
-
+    padding: 11px 17px;
     cursor: pointer;
-
-    font-size: 15px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
 }
 
 .suggestion-item:hover {
-    background: #f8f9fa;
+    background: #f1f3f4;
 }
 
 body.dark .suggestion-item:hover {
     background: #3c4043;
 }
+
+
+/* =========================================================
+   HISTORY
+========================================================= */
+
+.history-box {
+    width: min(650px, 94vw);
+    margin-top: 28px;
+    display: none;
+}
+
+.history-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 7px;
+}
+
+.history-title {
+    color: #5f6368;
+    font-size: 14px;
+}
+
+body.dark .history-title {
+    color: #bdc1c6;
+}
+
+.clear-history {
+    border: 0;
+    background: transparent;
+    color: #1a73e8;
+    cursor: pointer;
+    font-size: 13px;
+}
+
+.history-item {
+    padding: 9px 4px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.history-item:hover {
+    background: #f1f3f4;
+}
+
+body.dark .history-item:hover {
+    background: #303134;
+}
+
+.history-clock {
+    color: #70757a;
+}
+
+.history-text {
+    flex: 1;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
 
 /* =========================================================
    HOME BUTTONS
@@ -521,42 +409,28 @@ body.dark .suggestion-item:hover {
 
 .home-buttons {
     display: flex;
-
     gap: 12px;
-
-    margin-top: 28px;
+    margin-top: 25px;
 }
 
 .home-btn {
-    border: 1px solid transparent;
-
+    border: 1px solid #f8f9fa;
     background: #f8f9fa;
-
-    color: #202124;
-
-    border-radius: 5px;
-
+    color: inherit;
     padding: 10px 18px;
-
-    font-size: 14px;
-
+    border-radius: 5px;
     cursor: pointer;
-}
-
-.home-btn:hover {
-    border-color: #dadce0;
-
-    box-shadow: 0 1px 1px rgba(0,0,0,.1);
 }
 
 body.dark .home-btn {
     background: #303134;
-    color: #e8eaed;
+    border-color: #303134;
 }
 
-body.dark .home-btn:hover {
-    border-color: #5f6368;
+.home-btn:hover {
+    border-color: #dadce0;
 }
+
 
 /* =========================================================
    SEARCH PAGE
@@ -564,167 +438,107 @@ body.dark .home-btn:hover {
 
 .search-page {
     display: none;
-
-    padding: 20px 0 60px 0;
 }
 
-.search-container {
-    width: min(1100px, 94vw);
-
-    margin: 0 auto;
-}
-
-/* =========================================================
-   SEARCH HEADER
-========================================================= */
-
-.search-header {
-    display: flex;
-    align-items: center;
-
-    gap: 20px;
-
-    margin-bottom: 15px;
-}
-
-.search-header-title {
-    font-size: 14px;
-
-    color: #70757a;
-}
-
-body.dark .search-header-title {
-    color: #9aa0a6;
-}
 
 /* =========================================================
    TABS
 ========================================================= */
 
-.tabs {
-    display: flex;
-
-    gap: 8px;
-
-    border-bottom: 1px solid #dadce0;
-
-    margin-bottom: 25px;
+.tabs-bar {
+    border-bottom: 1px solid #eee;
+    padding-left: 22px;
+    background: #fff;
 }
 
-body.dark .tabs {
+body.dark .tabs-bar {
+    background: #202124;
     border-color: #3c4043;
+}
+
+.tabs {
+    max-width: 1000px;
+    margin: auto;
+    display: flex;
+    gap: 28px;
 }
 
 .tab {
     border: 0;
-
     background: transparent;
-
-    padding: 12px 16px;
-
-    cursor: pointer;
-
     color: #5f6368;
-
-    font-size: 14px;
-
+    padding: 14px 4px;
+    cursor: pointer;
     border-bottom: 3px solid transparent;
-}
-
-.tab:hover {
-    color: #202124;
-}
-
-.tab.active {
-    color: #1a73e8;
-
-    border-bottom-color: #1a73e8;
 }
 
 body.dark .tab {
     color: #bdc1c6;
 }
 
-body.dark .tab:hover {
-    color: #fff;
+.tab.active {
+    color: #1a73e8;
+    border-bottom-color: #1a73e8;
 }
 
-body.dark .tab.active {
-    color: #8ab4f8;
-    border-bottom-color: #8ab4f8;
-}
 
 /* =========================================================
-   RESULT LAYOUT
+   CONTENT
 ========================================================= */
 
-.results-layout {
-    display: flex;
-
-    align-items: flex-start;
-
-    gap: 35px;
+.content {
+    width: calc(100% - 44px);
+    margin: 0;
+    padding: 24px 0 80px 22px;
 }
 
-.results-main {
-    flex: 1;
 
-    min-width: 0;
+/* STATUS */
+
+.status {
+    color: #70757a;
+    font-size: 13px;
+    margin-bottom: 20px;
 }
 
-.info-panel {
-    width: 300px;
-
-    border: 1px solid #dadce0;
-
-    border-radius: 10px;
-
-    padding: 18px;
-
-    position: sticky;
-
-    top: 85px;
+body.dark .status {
+    color: #9aa0a6;
 }
 
-body.dark .info-panel {
-    border-color: #3c4043;
-}
-
-.info-title {
-    font-size: 18px;
-
-    font-weight: bold;
-
-    margin-bottom: 10px;
-}
-
-.info-text {
-    color: #5f6368;
-
-    font-size: 14px;
-
-    line-height: 1.5;
-}
-
-body.dark .info-text {
-    color: #bdc1c6;
-}
 
 /* =========================================================
-   WEB RESULTS
+   RESULTS
 ========================================================= */
+
+.results {
+    width: min(780px, 100%);
+    margin-left: 0;
+}
 
 .result {
-    margin-bottom: 30px;
+    margin-bottom: 28px;
+}
+
+.result-title {
+    color: #1a0dab;
+    font-size: 20px;
+    line-height: 1.3;
+    cursor: pointer;
+}
+
+body.dark .result-title {
+    color: #8ab4f8;
+}
+
+.result-title:hover {
+    text-decoration: underline;
 }
 
 .result-url {
     color: #188038;
-
     font-size: 13px;
-
-    margin-bottom: 4px;
-
+    margin-top: 5px;
+    margin-bottom: 5px;
     word-break: break-all;
 }
 
@@ -732,611 +546,772 @@ body.dark .result-url {
     color: #81c995;
 }
 
-.result-title {
-    color: #1a0dab;
-
-    font-size: 20px;
-
-    margin-bottom: 5px;
-
-    cursor: pointer;
-
-    text-decoration: none;
-}
-
-.result-title:hover {
-    text-decoration: underline;
-}
-
-body.dark .result-title {
-    color: #8ab4f8;
-}
-
-.result-snippet {
+.result-description {
     color: #4d5156;
-
     font-size: 14px;
-
     line-height: 1.55;
 }
 
-body.dark .result-snippet {
+body.dark .result-description {
     color: #bdc1c6;
 }
 
-.no-results {
-    padding: 40px 0;
-
-    color: #70757a;
-
-    font-size: 16px;
-}
-
-/* =========================================================
-   LOADING
-========================================================= */
-
-.loading {
-    padding: 35px 0;
-
-    text-align: left;
-
-    color: #70757a;
-
-    font-size: 15px;
-}
 
 /* =========================================================
    IMAGE GRID
 ========================================================= */
 
 .image-grid {
+    width: min(1000px, 100%);
     display: grid;
-
-    grid-template-columns: repeat(4, 1fr);
-
-    gap: 14px;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: 15px;
 }
 
 .image-card {
-    border-radius: 10px;
-
+    height: 175px;
+    border-radius: 9px;
     overflow: hidden;
-
+    border: 1px solid #e0e0e0;
     background: #f8f9fa;
-
     cursor: pointer;
-
-    aspect-ratio: 1 / 1;
-
-    position: relative;
+    transition: transform .15s, box-shadow .15s;
 }
 
 body.dark .image-card {
     background: #303134;
+    border-color: #5f6368;
+}
+
+.image-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 13px rgba(0,0,0,.18);
 }
 
 .image-card img {
     width: 100%;
     height: 100%;
-
     object-fit: cover;
-
     display: block;
-
-    transition: transform .2s ease;
 }
 
-.image-card:hover img {
-    transform: scale(1.04);
-}
-
-.image-caption {
-    position: absolute;
-
-    left: 0;
-    right: 0;
-    bottom: 0;
-
-    padding: 10px;
-
-    background: linear-gradient(
-        transparent,
-        rgba(0,0,0,.7)
-    );
-
-    color: #fff;
-
-    font-size: 12px;
-}
 
 /* =========================================================
-   NEWS
+   LOADING
 ========================================================= */
 
-.news-item {
-    padding: 18px 0;
-
-    border-bottom: 1px solid #eee;
-}
-
-body.dark .news-item {
-    border-color: #3c4043;
-}
-
-.news-title {
-    font-size: 18px;
-
-    color: #1a0dab;
-
-    cursor: pointer;
-
-    margin-bottom: 5px;
-}
-
-body.dark .news-title {
-    color: #8ab4f8;
-}
-
-.news-source {
-    font-size: 12px;
-
+.loading {
+    text-align: center;
+    padding: 55px 10px;
     color: #70757a;
-
-    margin-bottom: 7px;
 }
 
-.news-snippet {
-    color: #4d5156;
-
-    font-size: 14px;
-
-    line-height: 1.5;
+.spinner {
+    width: 32px;
+    height: 32px;
+    border: 3px solid #ddd;
+    border-top-color: #4285f4;
+    border-radius: 50%;
+    margin: 0 auto 14px;
+    animation: spin .8s linear infinite;
 }
 
-body.dark .news-snippet {
-    color: #bdc1c6;
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
 }
+
 
 /* =========================================================
-   VIDEOS
+   MESSAGE
 ========================================================= */
 
-.video-item {
-    display: flex;
-
-    gap: 16px;
-
-    padding: 15px 0;
-
-    border-bottom: 1px solid #eee;
-
-    cursor: pointer;
+.message {
+    padding: 45px 10px;
+    text-align: center;
+    color: #70757a;
 }
 
-body.dark .video-item {
-    border-color: #3c4043;
+.error {
+    color: #d93025;
 }
 
-.video-thumb {
-    width: 190px;
-
-    height: 110px;
-
-    border-radius: 8px;
-
-    object-fit: cover;
-
-    background: #eee;
-}
-
-.video-content {
-    flex: 1;
-}
-
-.video-title {
-    font-size: 18px;
-
-    color: #1a0dab;
-
-    margin-bottom: 7px;
-}
-
-body.dark .video-title {
-    color: #8ab4f8;
-}
-
-.video-description {
-    color: #5f6368;
-
-    font-size: 14px;
-
-    line-height: 1.5;
-}
-
-body.dark .video-description {
-    color: #bdc1c6;
-}
 
 /* =========================================================
    PAGINATION
 ========================================================= */
 
 .pagination {
+    width: 780px;
+    max-width: 100%;
     display: flex;
-
     justify-content: center;
-
-    gap: 8px;
-
-    margin-top: 40px;
+    align-items: center;
+    gap: 7px;
+    margin-top: 45px;
+    flex-wrap: wrap;
 }
 
 .page-btn {
-    min-width: 38px;
-    height: 38px;
-
+    min-width: 40px;
+    height: 40px;
+    padding: 0 12px;
     border: 1px solid #dadce0;
-
+    border-radius: 6px;
     background: #fff;
-
-    color: #3c4043;
-
-    border-radius: 5px;
-
+    color: #202124;
     cursor: pointer;
-}
-
-.page-btn:hover {
-    background: #f8f9fa;
-}
-
-.page-btn.active {
-    background: #1a73e8;
-
-    border-color: #1a73e8;
-
-    color: #fff;
 }
 
 body.dark .page-btn {
     background: #303134;
-
-    border-color: #5f6368;
-
     color: #e8eaed;
+    border-color: #5f6368;
+}
+
+.page-btn:hover {
+    background: #f1f3f4;
 }
 
 body.dark .page-btn:hover {
     background: #3c4043;
 }
 
-body.dark .page-btn.active {
-    background: #8ab4f8;
-
-    border-color: #8ab4f8;
-
-    color: #202124;
+.page-btn.active {
+    background: #1a73e8;
+    color: white;
+    border-color: #1a73e8;
 }
 
+
 /* =========================================================
-   LIGHTBOX
+   WEBSITE VIEWER
+   IMPORTANT:
+   This is OUTSIDE the search results layout.
+========================================================= */
+
+.site-viewer {
+    display: none;
+    width: calc(100% - 44px);
+    margin: 0 22px 45px;
+    border: 1px solid #dadce0;
+    border-radius: 14px;
+    overflow: hidden;
+    background: #fff;
+    box-shadow: 0 3px 15px rgba(0,0,0,.12);
+}
+
+body.dark .site-viewer {
+    background: #303134;
+    border-color: #5f6368;
+    box-shadow: 0 3px 15px rgba(0,0,0,.35);
+}
+
+.site-viewer.show {
+    display: block;
+}
+
+
+/* VIEWER HEADER */
+
+.website-viewer-header {
+    min-height: 62px;
+    padding: 10px 14px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+    border-bottom: 1px solid #e5e5e5;
+    background: #fff;
+}
+
+body.dark .website-viewer-header {
+    background: #292a2d;
+    border-color: #3c4043;
+}
+
+.website-viewer-info {
+    min-width: 0;
+    flex: 1;
+}
+
+.website-viewer-title {
+    font-size: 15px;
+    font-weight: 600;
+    color: #202124;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+body.dark .website-viewer-title {
+    color: #e8eaed;
+}
+
+.website-viewer-url {
+    margin-top: 4px;
+    font-size: 12px;
+    color: #70757a;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+body.dark .website-viewer-url {
+    color: #9aa0a6;
+}
+
+.website-viewer-actions {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    flex-shrink: 0;
+}
+
+.website-viewer-btn {
+    border: 1px solid #dadce0;
+    background: #fff;
+    color: #202124;
+    border-radius: 7px;
+    padding: 8px 12px;
+    cursor: pointer;
+    white-space: nowrap;
+}
+
+.website-viewer-btn:hover {
+    background: #f1f3f4;
+}
+
+body.dark .website-viewer-btn {
+    background: #303134;
+    color: #e8eaed;
+    border-color: #5f6368;
+}
+
+body.dark .website-viewer-btn:hover {
+    background: #3c4043;
+}
+
+.website-viewer-close {
+    width: 38px;
+    height: 38px;
+    padding: 0;
+    font-size: 22px;
+}
+
+
+/* VIEWER BODY */
+
+.website-viewer-body {
+    position: relative;
+    width: 100%;
+    min-height: 520px;
+    background: #f8f9fa;
+}
+
+body.dark .website-viewer-body {
+    background: #202124;
+}
+
+
+/* IFRAME */
+
+#siteViewerFrame {
+    width: 100%;
+    height: 72vh;
+    min-height: 520px;
+    max-height: 900px;
+    display: none;
+    border: 0;
+    background: #fff;
+}
+
+
+/* LOADING */
+
+.website-viewer-loading {
+    min-height: 520px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #70757a;
+    gap: 10px;
+}
+
+.viewer-loading-spinner {
+    width: 38px;
+    height: 38px;
+    border: 3px solid #ddd;
+    border-top-color: #4285f4;
+    border-radius: 50%;
+    animation: spin .8s linear infinite;
+}
+
+
+/* FALLBACK */
+
+.website-viewer-fallback {
+    min-height: 520px;
+    padding: 50px 20px;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #5f6368;
+}
+
+body.dark .website-viewer-fallback {
+    color: #bdc1c6;
+}
+
+.viewer-fallback-icon {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #f1f3f4;
+    color: #5f6368;
+    font-size: 30px;
+    margin-bottom: 18px;
+}
+
+body.dark .viewer-fallback-icon {
+    background: #303134;
+    color: #bdc1c6;
+}
+
+.website-viewer-fallback h3 {
+    margin: 0 0 10px;
+    color: #202124;
+    font-size: 20px;
+}
+
+body.dark .website-viewer-fallback h3 {
+    color: #e8eaed;
+}
+
+.website-viewer-fallback p {
+    max-width: 600px;
+    line-height: 1.5;
+    margin: 0 0 20px;
+}
+
+
+/* =========================================================
+   IMAGE LIGHTBOX
 ========================================================= */
 
 .lightbox {
     display: none;
-
     position: fixed;
-
     inset: 0;
-
-    background: rgba(0,0,0,.88);
-
-    z-index: 10000;
-
-    align-items: center;
-
-    justify-content: center;
-
-    overflow: hidden;
+    z-index: 99999;
+    background: rgba(0,0,0,.95);
+    flex-direction: column;
 }
 
 .lightbox.show {
     display: flex;
 }
 
-.lightbox-close {
-    position: absolute;
 
-    top: 20px;
-    right: 25px;
+/* VIEWER TOP */
 
-    width: 44px;
-    height: 44px;
-
-    border: 0;
-
-    border-radius: 50%;
-
-    background: rgba(255,255,255,.15);
-
-    color: #fff;
-
-    font-size: 25px;
-
-    cursor: pointer;
-
-    z-index: 100;
-}
-
-.lightbox-close:hover {
-    background: rgba(255,255,255,.25);
-}
-
-.lightbox-content {
-    width: min(1100px, 92vw);
-    height: min(90vh, 800px);
-
+.viewer-top {
+    height: 58px;
+    flex-shrink: 0;
     display: flex;
-
     align-items: center;
-
-    justify-content: center;
-
-    position: relative;
+    justify-content: space-between;
+    padding: 0 16px;
+    color: white;
 }
 
-.lightbox-main {
-    width: 75%;
-    height: 100%;
-
-    display: flex;
-
-    align-items: center;
-
-    justify-content: center;
-
+.viewer-title {
+    max-width: 55vw;
     overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    font-size: 14px;
+}
 
+.viewer-actions {
+    display: flex;
+    gap: 7px;
+}
+
+.viewer-btn {
+    width: 42px;
+    height: 42px;
+    border: 0;
+    border-radius: 50%;
+    background: rgba(255,255,255,.12);
+    color: white;
+    cursor: pointer;
+    font-size: 21px;
+}
+
+.viewer-btn:hover {
+    background: rgba(255,255,255,.27);
+}
+
+
+/* VIEWER MAIN */
+
+.viewer-main {
+    flex: 1;
+    min-height: 0;
     position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
 }
 
-.lightbox-main img {
-    max-width: 100%;
-    max-height: 100%;
+.viewer-image-wrap {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
 
-    object-fit: contain;
-
-    transform-origin: center center;
-
+.viewer-image-wrap.zoomed {
     cursor: grab;
-
-    user-select: none;
-
-    transition: transform .15s ease;
 }
 
-.lightbox-main img:active {
+.viewer-image-wrap.dragging {
     cursor: grabbing;
 }
 
-/* =========================================================
-   RELATED IMAGES
-========================================================= */
-
-.related-panel {
-    width: 25%;
-    height: 100%;
-
-    padding-left: 15px;
-
-    overflow-y: auto;
+.viewer-image {
+    max-width: 88vw;
+    max-height: 72vh;
+    object-fit: contain;
+    user-select: none;
+    -webkit-user-drag: none;
+    transform-origin: center center;
+    transition: transform .12s ease;
 }
 
-.related-title {
-    color: #fff;
 
-    font-size: 15px;
+/* IMAGE NAV */
 
-    font-weight: bold;
-
-    margin-bottom: 12px;
-}
-
-.related-grid {
-    display: grid;
-
-    grid-template-columns: repeat(2, 1fr);
-
-    gap: 8px;
-}
-
-.related-item {
-    width: 100%;
-
-    aspect-ratio: 1 / 1;
-
-    overflow: hidden;
-
-    border-radius: 6px;
-
+.viewer-nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 50px;
+    height: 70px;
+    border: 0;
+    border-radius: 10px;
+    background: rgba(0,0,0,.45);
+    color: white;
+    font-size: 38px;
     cursor: pointer;
+    z-index: 10;
 }
 
-.related-item img {
-    width: 100%;
-    height: 100%;
-
-    object-fit: cover;
-
-    display: block;
+.viewer-nav:hover {
+    background: rgba(0,0,0,.7);
 }
 
-.related-item:hover img {
-    opacity: .8;
+.viewer-prev {
+    left: 16px;
 }
 
-/* =========================================================
-   ZOOM CONTROLS
-========================================================= */
+.viewer-next {
+    right: 16px;
+}
+
+
+/* ZOOM */
 
 .zoom-controls {
     position: absolute;
-
-    bottom: 20px;
+    bottom: 17px;
     left: 50%;
-
     transform: translateX(-50%);
-
     display: flex;
-
-    gap: 8px;
-
-    z-index: 100;
+    align-items: center;
+    gap: 5px;
+    background: rgba(0,0,0,.58);
+    padding: 6px;
+    border-radius: 25px;
+    z-index: 20;
 }
 
 .zoom-btn {
-    width: 42px;
-    height: 42px;
-
+    width: 38px;
+    height: 38px;
     border: 0;
-
     border-radius: 50%;
-
-    background: rgba(255,255,255,.18);
-
-    color: #fff;
-
-    font-size: 22px;
-
+    background: rgba(255,255,255,.13);
+    color: white;
     cursor: pointer;
+    font-size: 21px;
 }
 
 .zoom-btn:hover {
-    background: rgba(255,255,255,.3);
+    background: rgba(255,255,255,.27);
 }
+
+.zoom-level {
+    min-width: 55px;
+    text-align: center;
+    color: white;
+    font-size: 13px;
+}
+
+
+/* RELATED */
+
+.related-section {
+    height: 142px;
+    flex-shrink: 0;
+    padding: 9px 17px 14px;
+    background: rgba(0,0,0,.76);
+}
+
+.related-title {
+    color: white;
+    font-size: 13px;
+    opacity: .82;
+    margin-bottom: 7px;
+}
+
+.related-grid {
+    height: 94px;
+    display: flex;
+    gap: 10px;
+    overflow-x: auto;
+}
+
+.related-card {
+    flex: 0 0 105px;
+    height: 84px;
+    border-radius: 7px;
+    overflow: hidden;
+    border: 2px solid transparent;
+    cursor: pointer;
+}
+
+.related-card.active {
+    border-color: #4285f4;
+}
+
+.related-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+
+/* =========================================================
+   HOME MODE
+========================================================= */
+
+body.home-mode .top-search-area {
+    display: none;
+}
+
+body.home-mode .topbar {
+    position: relative;
+}
+
+body.home-mode .top-left {
+    flex: 1;
+}
+
+body.home-mode .top-right {
+    flex: 1;
+}
+
 
 /* =========================================================
    RESPONSIVE
 ========================================================= */
 
-@media (max-width: 900px) {
+@media (max-width: 1000px) {
 
-    .results-layout {
-        display: block;
+    .top-left {
+        min-width: 170px;
     }
 
-    .info-panel {
-        width: 100%;
-
-        position: static;
-
-        margin-top: 30px;
+    .top-right {
+        min-width: 170px;
     }
 
     .image-grid {
-        grid-template-columns: repeat(3, 1fr);
-    }
-
-    .lightbox-content {
-        width: 95vw;
-    }
-
-    .lightbox-main {
-        width: 70%;
-    }
-
-    .related-panel {
-        width: 30%;
+        grid-template-columns:
+            repeat(4, minmax(0, 1fr));
     }
 
 }
 
-@media (max-width: 650px) {
+
+@media (max-width: 750px) {
+
+    .topbar {
+        padding: 0 10px;
+    }
 
     .top-left {
         min-width: auto;
     }
 
-    .topbar {
-        padding: 0 8px;
+    .top-right {
+        min-width: auto;
     }
 
-    .top-link {
-        display: none;
+    .top-btn {
+        padding: 7px;
+    }
+
+    .logo {
+        font-size: 21px;
     }
 
     .top-search-area {
         padding: 0 8px;
     }
 
-    .home {
-        padding-top: 80px;
+    .tabs {
+        gap: 18px;
+        overflow-x: auto;
     }
 
-    .home-logo {
-        font-size: 55px;
+    .content {
+        width: calc(100% - 30px);
+        padding-left: 15px;
     }
 
     .image-grid {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+        gap: 10px;
     }
 
-    .video-item {
-        display: block;
+    .image-card {
+        height: 155px;
     }
 
-    .video-thumb {
-        width: 100%;
-        height: 180px;
-        margin-bottom: 10px;
+    .site-viewer {
+        width: calc(100% - 30px);
+        margin-left: 15px;
+        margin-right: 15px;
     }
 
-    .lightbox-content {
-        width: 100vw;
-        height: 100vh;
-    }
-
-    .lightbox-main {
-        width: 100%;
-        height: 75%;
-    }
-
-    .related-panel {
-        position: absolute;
-
-        bottom: 0;
-        left: 0;
-
-        width: 100%;
-        height: 25%;
-
-        padding: 8px 12px;
-
-        background: rgba(0,0,0,.5);
-    }
-
-    .related-grid {
-        grid-template-columns: repeat(5, 1fr);
+    .website-viewer-header {
+        align-items: flex-start;
     }
 
 }
+
+
+@media (max-width: 600px) {
+
+    .website-viewer-header {
+        flex-direction: column;
+    }
+
+    .website-viewer-actions {
+        width: 100%;
+    }
+
+    .website-viewer-btn {
+        flex: 1;
+    }
+
+}
+
+
+@media (max-width: 500px) {
+
+    .nav-btn {
+        width: 34px;
+        height: 34px;
+        font-size: 18px;
+    }
+
+    .logo {
+        display: none;
+    }
+
+    .top-search-area {
+        padding: 0 5px;
+    }
+
+    .home {
+        padding-top: 11vh;
+    }
+
+    .home-logo {
+        font-size: 48px;
+    }
+
+    .viewer-image {
+        max-width: 96vw;
+        max-height: 65vh;
+    }
+
+    .viewer-nav {
+        width: 42px;
+        height: 58px;
+        font-size: 30px;
+    }
+
+    .viewer-prev {
+        left: 7px;
+    }
+
+    .viewer-next {
+        right: 7px;
+    }
+
+    #siteViewerFrame {
+        min-height: 420px;
+        height: 70vh;
+    }
+
+    .website-viewer-loading,
+    .website-viewer-fallback {
+        min-height: 420px;
+    }
+
+}
+
+
+/* =========================================================
+   END CSS
+========================================================= */
+
 </style>
 </head>
 
-<body>
 
-<!-- =======================================================
+<body class="home-mode">
+
+
+<!-- ========================================================
      TOP BAR
-======================================================= -->
+========================================================= -->
 
 <header class="topbar">
 
     <div class="top-left">
 
         <button
+            id="backButton"
             class="nav-btn"
-            id="backBtn"
+            onclick="goBack()"
             title="Back"
         >
             ←
@@ -1344,7 +1319,7 @@ body.dark .page-btn.active {
 
         <button
             class="nav-btn"
-            id="reloadBtn"
+            onclick="reloadPage()"
             title="Reload"
         >
             ↻
@@ -1352,12 +1327,15 @@ body.dark .page-btn.active {
 
         <div
             class="logo"
-            id="topLogo"
+            onclick="goHome()"
         >
-            <span class="b">M</span><span class="r">y</span><span class="y">S</span><span class="g">earch</span>
+            <span class="b">M</span><span class="r">y</span><span class="y">S</span><span class="b">e</span><span class="g">a</span><span class="r">r</span><span class="b">c</span><span class="g">h</span>
         </div>
 
     </div>
+
+
+    <!-- TOP SEARCH -->
 
     <div class="top-search-area">
 
@@ -1368,37 +1346,50 @@ body.dark .page-btn.active {
             </span>
 
             <input
+                id="topSearchInput"
                 type="text"
-                id="topSearchInp"
-                placeholder="Search"
+                placeholder="Search..."
                 autocomplete="off"
             >
 
             <button
+                id="topSearchClear"
                 class="top-search-clear"
-                id="topClear"
+                onclick="clearTopSearch()"
             >
                 ×
+            </button>
+
+            <button
+                class="top-search-button"
+                onclick="performSearch()"
+            >
+                🔍
             </button>
 
         </div>
 
     </div>
 
+
+    <!-- RIGHT -->
+
     <div class="top-right">
 
         <button
-            class="top-link"
-            id="aboutBtn"
+            class="top-btn"
+            onclick="showAbout()"
         >
             About
         </button>
 
         <button
-            class="top-link"
-            id="darkBtn"
+            id="darkModeButton"
+            class="top-btn"
+            onclick="toggleDarkMode()"
+            title="Dark mode"
         >
-            Dark
+            🌙
         </button>
 
     </div>
@@ -1406,15 +1397,22 @@ body.dark .page-btn.active {
 </header>
 
 
-<!-- =======================================================
-     HOME
-======================================================= -->
 
-<main class="home" id="home">
+<!-- ========================================================
+     HOME
+========================================================= -->
+
+<section
+    id="home"
+    class="home"
+>
 
     <div class="home-logo">
-        <span class="b">M</span><span class="r">y</span><span class="y">S</span><span class="g">earch</span>
+        <span class="b">M</span><span class="r">y</span><span class="y">S</span><span class="b">e</span><span class="g">a</span><span class="r">r</span><span class="b">c</span><span class="g">h</span>
     </div>
+
+
+    <!-- HOME SEARCH -->
 
     <div class="home-search-area">
 
@@ -1425,234 +1423,280 @@ body.dark .page-btn.active {
             </span>
 
             <input
-                type="text"
                 id="homeSearch"
-                placeholder="Search the web"
+                type="text"
+                placeholder="Search the web..."
                 autocomplete="off"
             >
 
             <button
-                class="home-clear"
                 id="homeClear"
+                class="home-clear"
+                onclick="clearHomeSearch()"
             >
                 ×
             </button>
 
         </div>
 
-        <!-- SUGGESTIONS -->
 
         <div
-            class="suggestions"
             id="suggestions"
+            class="suggestions"
         ></div>
 
-        <!-- RECENT SEARCHES -->
+    </div>
 
-        <div
-            class="history-box"
-            id="historyBox"
-        >
+
+    <!-- HISTORY -->
+
+    <div
+        id="historyBox"
+        class="history-box"
+    >
+
+        <div class="history-header">
 
             <div class="history-title">
                 Recent searches
             </div>
 
-            <div id="historyList"></div>
-
-            <div class="history-footer">
-
-                <button
-                    class="clear-history"
-                    id="clearHistoryBtn"
-                >
-                    Clear search history
-                </button>
-
-            </div>
+            <button
+                class="clear-history"
+                onclick="clearHistory()"
+            >
+                Clear
+            </button>
 
         </div>
 
+        <div id="historyList"></div>
+
     </div>
 
+
+    <!-- BUTTONS -->
 
     <div class="home-buttons">
 
         <button
             class="home-btn"
-            id="searchBtn"
+            onclick="performSearch()"
         >
             MySearch
         </button>
 
         <button
             class="home-btn"
-            id="luckyBtn"
+            onclick="performImageSearch()"
         >
-            Surprise me
+            Images
         </button>
-
-    </div>
-
-</main>
-
-
-<!-- =======================================================
-     SEARCH PAGE
-======================================================= -->
-
-<section
-    class="search-page"
-    id="searchPage"
->
-
-    <div class="search-container">
-
-        <div class="search-header">
-
-            <div
-                class="search-header-title"
-                id="searchHeaderTitle"
-            ></div>
-
-        </div>
-
-
-        <!-- TABS -->
-
-        <div class="tabs">
-
-            <button
-                class="tab active"
-                data-tab="all"
-            >
-                All
-            </button>
-
-            <button
-                class="tab"
-                data-tab="images"
-            >
-                Images
-            </button>
-
-            <button
-                class="tab"
-                data-tab="news"
-            >
-                News
-            </button>
-
-            <button
-                class="tab"
-                data-tab="videos"
-            >
-                Videos
-            </button>
-
-        </div>
-
-
-        <!-- RESULTS -->
-
-        <div class="results-layout">
-
-            <div
-                class="results-main"
-                id="resultsMain"
-            ></div>
-
-            <aside class="info-panel">
-
-                <div class="info-title">
-                    MySearch
-                </div>
-
-                <div class="info-text">
-                    Search results are collected from
-                    available web sources.
-                </div>
-
-            </aside>
-
-        </div>
-
-
-        <div
-            class="pagination"
-            id="pagination"
-        ></div>
 
     </div>
 
 </section>
 
 
-<!-- =======================================================
-     IMAGE LIGHTBOX
-======================================================= -->
 
-<div
-    class="lightbox"
-    id="lightbox"
+<!-- ========================================================
+     SEARCH PAGE
+========================================================= -->
+
+<section
+    id="searchPage"
+    class="search-page"
 >
 
-    <button
-        class="lightbox-close"
-        id="lightboxClose"
-    >
-        ×
-    </button>
 
+    <!-- TABS -->
 
-    <div class="lightbox-content">
+    <div class="tabs-bar">
 
-        <div class="lightbox-main">
+        <div class="tabs">
 
-            <img
-                id="lightboxImage"
-                src=""
-                alt=""
+            <button
+                id="tabAll"
+                class="tab active"
+                onclick="showTab('all')"
             >
+                All
+            </button>
 
-            <div class="zoom-controls">
+            <button
+                id="tabImages"
+                class="tab"
+                onclick="showTab('images')"
+            >
+                Images
+            </button>
 
-                <button
-                    class="zoom-btn"
-                    id="zoomOutBtn"
-                >
-                    −
-                </button>
+            <button
+                id="tabNews"
+                class="tab"
+                onclick="showTab('news')"
+            >
+                News
+            </button>
 
-                <button
-                    class="zoom-btn"
-                    id="zoomResetBtn"
-                >
-                    1×
-                </button>
+            <button
+                id="tabVideos"
+                class="tab"
+                onclick="showTab('videos')"
+            >
+                Videos
+            </button>
 
-                <button
-                    class="zoom-btn"
-                    id="zoomInBtn"
-                >
-                    +
-                </button>
+        </div>
 
+    </div>
+
+
+    <!-- CONTENT -->
+
+    <main class="content">
+
+        <div
+            id="status"
+            class="status"
+        ></div>
+
+
+        <div
+            id="results"
+            class="results"
+        ></div>
+
+
+        <div
+            id="imageGrid"
+            class="image-grid"
+            style="display:none;"
+        ></div>
+
+
+        <div
+            id="pagination"
+            class="pagination"
+        ></div>
+
+    </main>
+
+</section>
+
+
+
+<!-- ========================================================
+     WEBSITE VIEWER
+     
+     IMPORTANT:
+     This is NOT inside the results flex/layout.
+========================================================= -->
+
+<div
+    id="siteViewer"
+    class="site-viewer"
+    aria-hidden="true"
+>
+
+    <div class="website-viewer-header">
+
+        <div class="website-viewer-info">
+
+            <div
+                id="websiteViewerTitle"
+                class="website-viewer-title"
+            >
+                Website Viewer
+            </div>
+
+            <div
+                id="websiteViewerUrl"
+                class="website-viewer-url"
+            >
+                —
             </div>
 
         </div>
 
 
-        <div class="related-panel">
+        <div class="website-viewer-actions">
 
-            <div class="related-title">
-                Related images
+            <button
+                id="websiteOpenButton"
+                class="website-viewer-btn"
+            >
+                ↗ Open in new tab
+            </button>
+
+            <button
+                id="websiteCloseButton"
+                class="website-viewer-btn website-viewer-close"
+                title="Close viewer"
+            >
+                ×
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <div class="website-viewer-body">
+
+
+        <!-- LOADING -->
+
+        <div
+            id="websiteViewerLoading"
+            class="website-viewer-loading"
+        >
+
+            <div class="viewer-loading-spinner"></div>
+
+            <div>
+                Loading website...
             </div>
 
-            <div
-                class="related-grid"
-                id="relatedGrid"
-            ></div>
+        </div>
+
+
+        <!-- IFRAME -->
+
+        <iframe
+            id="siteViewerFrame"
+            title="Website Viewer"
+            loading="eager"
+            referrerpolicy="no-referrer"
+        ></iframe>
+
+
+        <!-- FALLBACK -->
+
+        <div
+            id="websiteViewerFallback"
+            class="website-viewer-fallback"
+        >
+
+            <div class="viewer-fallback-icon">
+                ↗
+            </div>
+
+            <h3>
+                This website can't be shown here
+            </h3>
+
+            <p>
+                The website may not allow itself to be embedded
+                inside another webpage.
+            </p>
+
+            <button
+                id="websiteFallbackOpenButton"
+                class="website-viewer-btn"
+            >
+                ↗ Open website
+            </button>
 
         </div>
 
@@ -1661,13 +1705,186 @@ body.dark .page-btn.active {
 </div>
 
 
+
+<!-- ========================================================
+     IMAGE VIEWER
+========================================================= -->
+
+<div
+    id="lightbox"
+    class="lightbox"
+>
+
+    <div class="viewer-top">
+
+        <div
+            id="viewerTitle"
+            class="viewer-title"
+        >
+            Image
+        </div>
+
+
+        <div class="viewer-actions">
+
+            <button
+                class="viewer-btn"
+                onclick="zoomOut()"
+            >
+                −
+            </button>
+
+            <button
+                class="viewer-btn"
+                onclick="resetZoom()"
+            >
+                ⟳
+            </button>
+
+            <button
+                class="viewer-btn"
+                onclick="zoomIn()"
+            >
+                +
+            </button>
+
+            <button
+                class="viewer-btn"
+                onclick="closeLightbox()"
+            >
+                ×
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <div class="viewer-main">
+
+        <button
+            class="viewer-nav viewer-prev"
+            onclick="previousImage()"
+        >
+            ‹
+        </button>
+
+
+        <div
+            id="viewerImageWrap"
+            class="viewer-image-wrap"
+        >
+
+            <img
+                id="viewerImage"
+                class="viewer-image"
+                src=""
+                alt="Selected image"
+                draggable="false"
+            >
+
+        </div>
+
+
+        <button
+            class="viewer-nav viewer-next"
+            onclick="nextImage()"
+        >
+            ›
+        </button>
+
+
+        <div class="zoom-controls">
+
+            <button
+                class="zoom-btn"
+                onclick="zoomOut()"
+            >
+                −
+            </button>
+
+            <div
+                id="zoomLevel"
+                class="zoom-level"
+            >
+                100%
+            </div>
+
+            <button
+                class="zoom-btn"
+                onclick="zoomIn()"
+            >
+                +
+            </button>
+
+            <button
+                class="zoom-btn"
+                onclick="resetZoom()"
+            >
+                ⟳
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <div class="related-section">
+
+        <div class="related-title">
+            Related images
+        </div>
+
+        <div
+            id="relatedGrid"
+            class="related-grid"
+        ></div>
+
+    </div>
+
+</div>
+
+
+
 <script>
 
 /* =========================================================
    VARIABLES
 ========================================================= */
 
-const home = document.getElementById("home");
+let currentQuery = "";
+let currentPage = 1;
+let currentTab = "all";
+
+let currentImages = [];
+let currentImageIndex = 0;
+
+let zoomValue = 1;
+
+let translateX = 0;
+let translateY = 0;
+
+let dragging = false;
+
+let dragStartX = 0;
+let dragStartY = 0;
+
+let startTranslateX = 0;
+let startTranslateY = 0;
+
+
+/* WEBSITE VIEWER */
+
+let currentWebsiteUrl = "";
+let websiteViewerTimer = null;
+
+
+/* =========================================================
+   ELEMENTS
+========================================================= */
+
+const home =
+    document.getElementById("home");
 
 const searchPage =
     document.getElementById("searchPage");
@@ -1675,14 +1892,11 @@ const searchPage =
 const homeSearch =
     document.getElementById("homeSearch");
 
-const topSearchInp =
-    document.getElementById("topSearchInp");
+const topSearchInput =
+    document.getElementById("topSearchInput");
 
-const homeClear =
-    document.getElementById("homeClear");
-
-const topClear =
-    document.getElementById("topClear");
+const suggestions =
+    document.getElementById("suggestions");
 
 const historyBox =
     document.getElementById("historyBox");
@@ -1690,85 +1904,73 @@ const historyBox =
 const historyList =
     document.getElementById("historyList");
 
-const suggestions =
-    document.getElementById("suggestions");
+const homeClear =
+    document.getElementById("homeClear");
 
-const resultsMain =
-    document.getElementById("resultsMain");
+const topSearchClear =
+    document.getElementById("topSearchClear");
+
+const resultsBox =
+    document.getElementById("results");
+
+const imageGrid =
+    document.getElementById("imageGrid");
+
+const statusBox =
+    document.getElementById("status");
 
 const pagination =
     document.getElementById("pagination");
 
-const searchHeaderTitle =
-    document.getElementById("searchHeaderTitle");
-
 const lightbox =
     document.getElementById("lightbox");
 
-const lightboxImage =
-    document.getElementById("lightboxImage");
+const viewerImage =
+    document.getElementById("viewerImage");
+
+const viewerImageWrap =
+    document.getElementById("viewerImageWrap");
+
+const viewerTitle =
+    document.getElementById("viewerTitle");
 
 const relatedGrid =
     document.getElementById("relatedGrid");
 
-const backBtn =
-    document.getElementById("backBtn");
-
-const reloadBtn =
-    document.getElementById("reloadBtn");
-
-const topLogo =
-    document.getElementById("topLogo");
-
-const aboutBtn =
-    document.getElementById("aboutBtn");
-
-const darkBtn =
-    document.getElementById("darkBtn");
-
-const searchBtn =
-    document.getElementById("searchBtn");
-
-const luckyBtn =
-    document.getElementById("luckyBtn");
-
-const clearHistoryBtn =
-    document.getElementById("clearHistoryBtn");
-
-const lightboxClose =
-    document.getElementById("lightboxClose");
-
-const zoomInBtn =
-    document.getElementById("zoomInBtn");
-
-const zoomOutBtn =
-    document.getElementById("zoomOutBtn");
-
-const zoomResetBtn =
-    document.getElementById("zoomResetBtn");
+const zoomLevel =
+    document.getElementById("zoomLevel");
 
 
-let currentQuery = "";
+/* WEBSITE VIEWER ELEMENTS */
 
-let currentPage = 1;
+const siteViewer =
+    document.getElementById("siteViewer");
 
-let currentTab = "all";
+const siteViewerFrame =
+    document.getElementById("siteViewerFrame");
 
-let imageItems = [];
+const websiteViewerTitle =
+    document.getElementById("websiteViewerTitle");
 
-let currentImageIndex = 0;
+const websiteViewerUrl =
+    document.getElementById("websiteViewerUrl");
 
-let zoomLevel = 1;
+const websiteViewerLoading =
+    document.getElementById("websiteViewerLoading");
 
-let dragStartX = 0;
+const websiteViewerFallback =
+    document.getElementById("websiteViewerFallback");
 
-let dragStartY = 0;
+const websiteOpenButton =
+    document.getElementById("websiteOpenButton");
 
-let imageOffsetX = 0;
+const websiteCloseButton =
+    document.getElementById("websiteCloseButton");
 
-let imageOffsetY = 0;
-
-let dragging = false;
+const websiteFallbackOpenButton =
+    document.getElementById(
+        "websiteFallbackOpenButton"
+    );
 
 
 /* =========================================================
@@ -1779,11 +1981,21 @@ function getHistory() {
 
     try {
 
-        return JSON.parse(
+        const saved =
             localStorage.getItem(
                 "mysearch-history"
-            )
-        ) || [];
+            );
+
+        if (!saved) {
+            return [];
+        }
+
+        const data =
+            JSON.parse(saved);
+
+        return Array.isArray(data)
+            ? data
+            : [];
 
     } catch {
 
@@ -1796,18 +2008,20 @@ function getHistory() {
 
 function saveHistory(query) {
 
-    query = query.trim();
+    query =
+        String(query).trim();
 
     if (!query) {
         return;
     }
 
-    let history = getHistory();
+    let history =
+        getHistory();
 
     history =
         history.filter(
             item =>
-                item.toLowerCase() !==
+                String(item).toLowerCase() !==
                 query.toLowerCase()
         );
 
@@ -1861,184 +2075,7 @@ function renderHistory() {
                 <span class="history-text">
                     ${escapeHtml(query)}
                 </span>
-
-                <button
-                    class="history-delete"
-                    title="Remove"
-                >
-                    ×
-                </button>
             `;
-
-            item.addEventListener(
-                "click",
-                event => {
-
-                    if (
-                        event.target.classList.contains(
-                            "history-delete"
-                        )
-                    ) {
-                        return;
-                    }
-
-                    homeSearch.value =
-                        query;
-
-                    historyBox.style.display =
-                        "none";
-
-                    suggestions.style.display =
-                        "none";
-
-                    performSearch();
-
-                }
-            );
-
-
-            const deleteBtn =
-                item.querySelector(
-                    ".history-delete"
-                );
-
-            deleteBtn.addEventListener(
-                "click",
-                event => {
-
-                    event.stopPropagation();
-
-                    removeHistory(query);
-
-                }
-            );
-
-
-            historyList.appendChild(
-                item
-            );
-
-        }
-    );
-
-}
-
-
-function removeHistory(query) {
-
-    let history =
-        getHistory();
-
-    history =
-        history.filter(
-            item => item !== query
-        );
-
-    localStorage.setItem(
-        "mysearch-history",
-        JSON.stringify(history)
-    );
-
-    renderHistory();
-
-    historyBox.style.display =
-        history.length
-            ? "block"
-            : "none";
-
-}
-
-
-function clearHistory() {
-
-    localStorage.removeItem(
-        "mysearch-history"
-    );
-
-    historyList.innerHTML = "";
-
-    historyBox.style.display =
-        "none";
-
-}
-
-
-/* =========================================================
-   ESCAPE HTML
-========================================================= */
-
-function escapeHtml(text) {
-
-    const div =
-        document.createElement(
-            "div"
-        );
-
-    div.textContent = text;
-
-    return div.innerHTML;
-
-}
-
-
-/* =========================================================
-   SUGGESTIONS
-========================================================= */
-
-function renderSuggestions() {
-
-    const value =
-        homeSearch.value.trim();
-
-    if (!value) {
-
-        suggestions.style.display =
-            "none";
-
-        return;
-
-    }
-
-    const history =
-        getHistory();
-
-    const matches =
-        history.filter(
-            item =>
-                item
-                    .toLowerCase()
-                    .includes(
-                        value.toLowerCase()
-                    )
-        );
-
-
-    if (!matches.length) {
-
-        suggestions.style.display =
-            "none";
-
-        return;
-
-    }
-
-
-    suggestions.innerHTML = "";
-
-
-    matches.forEach(
-        query => {
-
-            const item =
-                document.createElement(
-                    "div"
-                );
-
-            item.className =
-                "suggestion-item";
-
-            item.textContent =
-                query;
 
             item.addEventListener(
                 "click",
@@ -2058,13 +2095,111 @@ function renderSuggestions() {
                 }
             );
 
-            suggestions.appendChild(
+            historyList.appendChild(
                 item
             );
 
         }
     );
 
+}
+
+
+function clearHistory() {
+
+    localStorage.removeItem(
+        "mysearch-history"
+    );
+
+    renderHistory();
+
+}
+
+
+/* =========================================================
+   SUGGESTIONS
+========================================================= */
+
+function renderSuggestions() {
+
+    const value =
+        homeSearch.value
+            .trim()
+            .toLowerCase();
+
+    suggestions.innerHTML = "";
+
+    if (!value) {
+
+        suggestions.style.display =
+            "none";
+
+        return;
+
+    }
+
+    const matches =
+        getHistory().filter(
+            item =>
+                String(item)
+                    .toLowerCase()
+                    .includes(value)
+        );
+
+    if (!matches.length) {
+
+        suggestions.style.display =
+            "none";
+
+        return;
+
+    }
+
+    matches
+        .slice(0, 6)
+        .forEach(
+            query => {
+
+                const item =
+                    document.createElement(
+                        "div"
+                    );
+
+                item.className =
+                    "suggestion-item";
+
+                item.innerHTML = `
+                    <span>🕘</span>
+
+                    <span>
+                        ${escapeHtml(query)}
+                    </span>
+                `;
+
+                item.addEventListener(
+                    "click",
+                    () => {
+
+                        homeSearch.value =
+                            query;
+
+                        suggestions.style.display =
+                            "none";
+
+                        historyBox.style.display =
+                            "none";
+
+                        performSearch();
+
+                    }
+                );
+
+                suggestions.appendChild(
+                    item
+                );
+
+            }
+        );
 
     suggestions.style.display =
         "block";
@@ -2077,70 +2212,6 @@ function renderSuggestions() {
 ========================================================= */
 
 homeSearch.addEventListener(
-    "focus",
-    () => {
-
-        const history =
-            getHistory();
-
-        /*
-           IMPORTANT:
-           Recent Searches only appears
-           after clicking/focusing the box.
-        */
-
-        if (!history.length) {
-
-            historyBox.style.display =
-                "none";
-
-            return;
-
-        }
-
-        renderHistory();
-
-        historyBox.style.display =
-            "block";
-
-    }
-);
-
-
-/*
-   When clicking anywhere outside
-   the home search area, hide history.
-*/
-
-document.addEventListener(
-    "click",
-    event => {
-
-        const homeSearchArea =
-            document.querySelector(
-                ".home-search-area"
-            );
-
-        if (
-            homeSearchArea &&
-            !homeSearchArea.contains(
-                event.target
-            )
-        ) {
-
-            historyBox.style.display =
-                "none";
-
-            suggestions.style.display =
-                "none";
-
-        }
-
-    }
-);
-
-
-homeSearch.addEventListener(
     "input",
     () => {
 
@@ -2150,6 +2221,52 @@ homeSearch.addEventListener(
                 : "none";
 
         renderSuggestions();
+
+    }
+);
+
+
+homeSearch.addEventListener(
+    "focus",
+    () => {
+
+        if (!homeSearch.value.trim()) {
+
+            if (getHistory().length) {
+
+                renderHistory();
+
+                historyBox.style.display =
+                    "block";
+
+            }
+
+        } else {
+
+            renderSuggestions();
+
+        }
+
+    }
+);
+
+
+homeSearch.addEventListener(
+    "click",
+    () => {
+
+        if (!homeSearch.value.trim()) {
+
+            if (getHistory().length) {
+
+                renderHistory();
+
+                historyBox.style.display =
+                    "block";
+
+            }
+
+        }
 
     }
 );
@@ -2179,14 +2296,24 @@ homeSearch.addEventListener(
    TOP INPUT
 ========================================================= */
 
-topSearchInp.addEventListener(
+topSearchInput.addEventListener(
+    "input",
+    () => {
+
+        topSearchClear.style.display =
+            topSearchInput.value
+                ? "block"
+                : "none";
+
+    }
+);
+
+
+topSearchInput.addEventListener(
     "keydown",
     event => {
 
         if (event.key === "Enter") {
-
-            homeSearch.value =
-                topSearchInp.value;
 
             performSearch();
 
@@ -2196,86 +2323,108 @@ topSearchInp.addEventListener(
 );
 
 
-topSearchInp.addEventListener(
-    "input",
-    () => {
+/* =========================================================
+   CLEAR SEARCH
+========================================================= */
 
-        topClear.style.display =
-            topSearchInp.value
-                ? "block"
-                : "none";
+function clearHomeSearch() {
 
-    }
-);
+    homeSearch.value = "";
 
+    homeClear.style.display =
+        "none";
 
-topClear.addEventListener(
-    "click",
-    () => {
+    suggestions.style.display =
+        "none";
 
-        topSearchInp.value = "";
+    historyBox.style.display =
+        "none";
 
-        topClear.style.display =
-            "none";
+    homeSearch.focus();
 
-        topSearchInp.focus();
-
-    }
-);
+}
 
 
-homeClear.addEventListener(
-    "click",
-    () => {
+function clearTopSearch() {
 
-        homeSearch.value = "";
+    topSearchInput.value = "";
 
-        homeClear.style.display =
-            "none";
+    topSearchClear.style.display =
+        "none";
 
-        suggestions.style.display =
-            "none";
+    topSearchInput.focus();
 
-        homeSearch.focus();
+}
 
-    }
-);
+
+/* =========================================================
+   HOME
+========================================================= */
+
+function goHome() {
+
+    closeWebsiteViewer();
+
+    currentQuery = "";
+    currentPage = 1;
+    currentTab = "all";
+
+    home.style.display =
+        "flex";
+
+    searchPage.style.display =
+        "none";
+
+    document.body.classList.add(
+        "home-mode"
+    );
+
+    topSearchInput.value =
+        "";
+
+    topSearchClear.style.display =
+        "none";
+
+    suggestions.style.display =
+        "none";
+
+    historyBox.style.display =
+        "none";
+
+    renderHistory();
+
+}
 
 
 /* =========================================================
    SEARCH
 ========================================================= */
 
-async function performSearch(
-    page = 1
-) {
+function performSearch() {
 
     const query =
-        homeSearch.value.trim();
+        document.body.classList.contains(
+            "home-mode"
+        )
+            ? homeSearch.value.trim()
+            : topSearchInput.value.trim();
 
     if (!query) {
         return;
     }
 
+    closeWebsiteViewer();
+
     currentQuery =
         query;
 
     currentPage =
-        page;
+        1;
+
+    currentTab =
+        "all";
 
     saveHistory(query);
-
-    historyBox.style.display =
-        "none";
-
-    suggestions.style.display =
-        "none";
-
-    topSearchInp.value =
-        query;
-
-    topClear.style.display =
-        "block";
 
     home.style.display =
         "none";
@@ -2283,205 +2432,258 @@ async function performSearch(
     searchPage.style.display =
         "block";
 
-    searchHeaderTitle.textContent =
-        `Results for "${query}"`;
-
-    currentTab =
-        "all";
-
-    setActiveTab(
-        "all"
+    document.body.classList.remove(
+        "home-mode"
     );
 
-    await loadResults();
+    topSearchInput.value =
+        query;
+
+    topSearchClear.style.display =
+        "block";
+
+    activateTab("all");
+
+    search(1);
 
 }
 
 
 /* =========================================================
-   LOAD RESULTS
+   WEB SEARCH
 ========================================================= */
 
-async function loadResults() {
+async function search(page = 1) {
 
-    resultsMain.innerHTML = `
-        <div class="loading">
-            Searching...
-        </div>
-    `;
+    currentPage =
+        page;
+
+    closeWebsiteViewer();
+
+    resultsBox.style.display =
+        "block";
+
+    imageGrid.style.display =
+        "none";
 
     pagination.innerHTML =
         "";
 
+    resultsBox.innerHTML = `
+        <div class="loading">
 
-    if (
-        currentTab ===
-        "images"
-    ) {
+            <div class="spinner"></div>
 
-        await loadImages();
+            Searching...
 
-        return;
+        </div>
+    `;
 
-    }
-
-
-    if (
-        currentTab ===
-        "news"
-    ) {
-
-        await loadNews();
-
-        return;
-
-    }
-
-
-    if (
-        currentTab ===
-        "videos"
-    ) {
-
-        await loadVideos();
-
-        return;
-
-    }
-
-
-    await loadWebResults();
-
-}
-
-
-/* =========================================================
-   WEB RESULTS
-========================================================= */
-
-async function loadWebResults() {
+    statusBox.textContent =
+        `Searching for "${currentQuery}"...`;
 
     try {
 
         const response =
             await fetch(
-                `/api/search?q=${encodeURIComponent(
+                "/api/search?q=" +
+                encodeURIComponent(
                     currentQuery
-                )}&page=${currentPage}`
+                ) +
+                "&page=" +
+                page
             );
-
-
-        if (!response.ok) {
-            throw new Error(
-                "Search request failed"
-            );
-        }
-
 
         const data =
             await response.json();
 
+        if (!response.ok) {
+
+            throw new Error(
+                data.error ||
+                "Search failed"
+            );
+
+        }
 
         const results =
-            data.results ||
-            data.items ||
-            [];
-
-
-        resultsMain.innerHTML =
-            "";
-
+            Array.isArray(
+                data.results
+            )
+                ? data.results
+                : [];
 
         if (!results.length) {
 
-            resultsMain.innerHTML = `
-                <div class="no-results">
+            resultsBox.innerHTML = `
+                <div class="message">
                     No results found.
                 </div>
             `;
+
+            statusBox.textContent =
+                `No results for "${currentQuery}"`;
 
             return;
 
         }
 
+        statusBox.textContent =
+            `Search results for "${currentQuery}"`;
+
+        resultsBox.innerHTML =
+            "";
 
         results.forEach(
-            item => {
+            result => {
 
-                const result =
+                const item =
                     document.createElement(
                         "div"
                     );
 
-                result.className =
+                item.className =
                     "result";
 
+                const titleText =
+                    String(
+                        result.title ||
+                        "Untitled"
+                    );
 
-                const url =
-                    item.url ||
-                    item.link ||
-                    "";
+                const link =
+                    normalizeUrl(
+                        result.link ||
+                        result.url ||
+                        ""
+                    );
 
+                const description =
+                    String(
+                        result.description ||
+                        ""
+                    );
 
-                const title =
-                    item.title ||
-                    item.name ||
-                    url;
+                item.innerHTML = `
 
-
-                const snippet =
-                    item.description ||
-                    item.snippet ||
-                    item.text ||
-                    "";
-
-
-                result.innerHTML = `
-                    <div class="result-url">
-                        ${escapeHtml(url)}
-                    </div>
-
-                    <a
+                    <div
                         class="result-title"
-                        href="${escapeHtml(url)}"
-                        target="_blank"
-                        rel="noopener noreferrer"
+                        role="button"
+                        tabindex="0"
                     >
-                        ${escapeHtml(title)}
-                    </a>
-
-                    <div class="result-snippet">
-                        ${escapeHtml(snippet)}
+                        ${escapeHtml(titleText)}
                     </div>
+
+                    <div class="result-url">
+                        ${escapeHtml(
+                            link ||
+                            String(
+                                result.link ||
+                                result.url ||
+                                ""
+                            )
+                        )}
+                    </div>
+
+                    <div class="result-description">
+                        ${escapeHtml(
+                            description
+                        )}
+                    </div>
+
                 `;
 
 
-                resultsMain.appendChild(
-                    result
+                const titleElement =
+                    item.querySelector(
+                        ".result-title"
+                    );
+
+
+                if (link) {
+
+                    titleElement.addEventListener(
+                        "click",
+                        () => {
+
+                            openWebsiteViewer(
+                                link,
+                                titleText
+                            );
+
+                        }
+                    );
+
+
+                    titleElement.addEventListener(
+                        "keydown",
+                        event => {
+
+                            if (
+                                event.key ===
+                                "Enter"
+                            ) {
+
+                                openWebsiteViewer(
+                                    link,
+                                    titleText
+                                );
+
+                            }
+
+                        }
+                    );
+
+                } else {
+
+                    titleElement.style.cursor =
+                        "default";
+
+                }
+
+
+                resultsBox.appendChild(
+                    item
                 );
 
             }
         );
 
 
-        renderPagination(
-            data.totalPages ||
-            data.pages ||
-            5
+        createPagination(
+            page,
+            Boolean(
+                data.hasMore
+            ),
+            search,
+            Number(
+                data.totalPages ||
+                0
+            )
         );
-
 
     } catch (error) {
 
-        console.error(
-            error
-        );
+        console.error(error);
 
-        resultsMain.innerHTML = `
-            <div class="no-results">
-                Search failed. Make sure the server is running.
+        resultsBox.innerHTML = `
+
+            <div class="message error">
+
+                Search failed.
+
+                <br><br>
+
+                ${escapeHtml(
+                    error.message
+                )}
+
             </div>
+
         `;
+
+        statusBox.textContent =
+            "Search error.";
 
     }
 
@@ -2489,59 +2691,253 @@ async function loadWebResults() {
 
 
 /* =========================================================
-   IMAGES
+   IMAGE SEARCH
 ========================================================= */
 
-async function loadImages() {
+function performImageSearch() {
 
-    resultsMain.innerHTML = `
-        <div class="loading">
+    const query =
+        document.body.classList.contains(
+            "home-mode"
+        )
+            ? homeSearch.value.trim()
+            : topSearchInput.value.trim();
+
+    if (!query) {
+        return;
+    }
+
+    closeWebsiteViewer();
+
+    currentQuery =
+        query;
+
+    currentPage =
+        1;
+
+    currentTab =
+        "images";
+
+    saveHistory(query);
+
+    home.style.display =
+        "none";
+
+    searchPage.style.display =
+        "block";
+
+    document.body.classList.remove(
+        "home-mode"
+    );
+
+    topSearchInput.value =
+        query;
+
+    topSearchClear.style.display =
+        "block";
+
+    activateTab("images");
+
+    showImages(1);
+
+}
+
+
+/* =========================================================
+   TABS
+========================================================= */
+
+function showTab(tab) {
+
+    currentTab =
+        tab;
+
+    closeWebsiteViewer();
+
+    activateTab(tab);
+
+    if (tab === "all") {
+
+        search(1);
+
+        return;
+
+    }
+
+
+    if (tab === "images") {
+
+        showImages(1);
+
+        return;
+
+    }
+
+
+    if (tab === "news") {
+
+        showComingSoon(
+            "News search"
+        );
+
+        return;
+
+    }
+
+
+    if (tab === "videos") {
+
+        showComingSoon(
+            "Video search"
+        );
+
+        return;
+
+    }
+
+}
+
+
+function activateTab(tab) {
+
+    document
+        .querySelectorAll(".tab")
+        .forEach(
+            button => {
+
+                button.classList.remove(
+                    "active"
+                );
+
+            }
+        );
+
+
+    const ids = {
+
+        all:
+            "tabAll",
+
+        images:
+            "tabImages",
+
+        news:
+            "tabNews",
+
+        videos:
+            "tabVideos"
+
+    };
+
+
+    const selected =
+        document.getElementById(
+            ids[tab]
+        );
+
+
+    if (selected) {
+
+        selected.classList.add(
+            "active"
+        );
+
+    }
+
+}
+
+
+/* =========================================================
+   IMAGE SEARCH
+========================================================= */
+
+async function showImages(page = 1) {
+
+    currentPage =
+        page;
+
+    closeWebsiteViewer();
+
+    resultsBox.style.display =
+        "none";
+
+    imageGrid.style.display =
+        "grid";
+
+    pagination.innerHTML =
+        "";
+
+    imageGrid.innerHTML = `
+
+        <div
+            class="loading"
+            style="grid-column:1/-1;"
+        >
+
+            <div class="spinner"></div>
+
             Loading images...
+
         </div>
+
     `;
+
+    statusBox.textContent =
+        `Images for "${currentQuery}"`;
 
 
     try {
 
         const response =
             await fetch(
-                `/api/images?q=${encodeURIComponent(
+                "/api/images?q=" +
+                encodeURIComponent(
                     currentQuery
-                )}&page=${currentPage}`
+                ) +
+                "&page=" +
+                page
             );
-
-
-        if (!response.ok) {
-            throw new Error(
-                "Image request failed"
-            );
-        }
 
 
         const data =
             await response.json();
 
 
-        const items =
-            data.results ||
-            data.items ||
-            data.images ||
-            [];
+        if (!response.ok) {
+
+            throw new Error(
+                data.error ||
+                "Image search failed"
+            );
+
+        }
 
 
-        imageItems =
-            items;
+        const images =
+            Array.isArray(
+                data.images
+            )
+                ? data.images
+                : [];
 
 
-        resultsMain.innerHTML = "";
+        currentImages =
+            images;
 
 
-        if (!items.length) {
+        if (!images.length) {
 
-            resultsMain.innerHTML = `
-                <div class="no-results">
+            imageGrid.innerHTML = `
+
+                <div
+                    class="message"
+                    style="grid-column:1/-1;"
+                >
+
                     No images found.
+
                 </div>
+
             `;
 
             return;
@@ -2549,30 +2945,12 @@ async function loadImages() {
         }
 
 
-        const grid =
-            document.createElement(
-                "div"
-            );
-
-        grid.className =
-            "image-grid";
+        imageGrid.innerHTML =
+            "";
 
 
-        items.forEach(
+        images.forEach(
             (item, index) => {
-
-                const imageUrl =
-                    item.image ||
-                    item.thumbnail ||
-                    item.url ||
-                    item.src ||
-                    "";
-
-
-                if (!imageUrl) {
-                    return;
-                }
-
 
                 const card =
                     document.createElement(
@@ -2588,44 +2966,15 @@ async function loadImages() {
                         "img"
                     );
 
+
                 img.src =
-                    imageUrl;
+                    item.image;
 
                 img.alt =
-                    item.title ||
-                    currentQuery;
+                    "Search image";
 
                 img.loading =
                     "lazy";
-
-
-                card.appendChild(
-                    img
-                );
-
-
-                if (
-                    item.title ||
-                    item.name
-                ) {
-
-                    const caption =
-                        document.createElement(
-                            "div"
-                        );
-
-                    caption.className =
-                        "image-caption";
-
-                    caption.textContent =
-                        item.title ||
-                        item.name;
-
-                    card.appendChild(
-                        caption
-                    );
-
-                }
 
 
                 card.addEventListener(
@@ -2640,7 +2989,22 @@ async function loadImages() {
                 );
 
 
-                grid.appendChild(
+                img.addEventListener(
+                    "error",
+                    () => {
+
+                        card.style.display =
+                            "none";
+
+                    }
+                );
+
+
+                card.appendChild(
+                    img
+                );
+
+                imageGrid.appendChild(
                     card
                 );
 
@@ -2648,28 +3012,37 @@ async function loadImages() {
         );
 
 
-        resultsMain.appendChild(
-            grid
-        );
-
-
-        renderPagination(
-            data.totalPages ||
-            data.pages ||
-            5
+        createPagination(
+            page,
+            Boolean(
+                data.hasMore
+            ),
+            showImages
         );
 
 
     } catch (error) {
 
-        console.error(
-            error
-        );
+        console.error(error);
 
-        resultsMain.innerHTML = `
-            <div class="no-results">
+
+        imageGrid.innerHTML = `
+
+            <div
+                class="message error"
+                style="grid-column:1/-1;"
+            >
+
                 Image search failed.
+
+                <br><br>
+
+                ${escapeHtml(
+                    error.message
+                )}
+
             </div>
+
         `;
 
     }
@@ -2678,451 +3051,445 @@ async function loadImages() {
 
 
 /* =========================================================
-   NEWS
+   WEBSITE VIEWER
 ========================================================= */
 
-async function loadNews() {
 
-    resultsMain.innerHTML = `
-        <div class="loading">
-            Loading news...
-        </div>
-    `;
+/*
+    Only HTTP/HTTPS URLs are accepted.
+*/
 
+function normalizeUrl(rawUrl) {
 
     try {
 
-        const response =
-            await fetch(
-                `/api/search?q=${encodeURIComponent(
-                    currentQuery
-                )}&page=${currentPage}`
-            );
+        const value =
+            String(rawUrl || "").trim();
 
-
-        const data =
-            await response.json();
-
-
-        const results =
-            data.results ||
-            data.items ||
-            [];
-
-
-        resultsMain.innerHTML =
-            "";
-
-
-        if (!results.length) {
-
-            resultsMain.innerHTML = `
-                <div class="no-results">
-                    No news found.
-                </div>
-            `;
-
-            return;
-
+        if (!value) {
+            return null;
         }
 
-
-        results.forEach(
-            item => {
-
-                const news =
-                    document.createElement(
-                        "div"
-                    );
-
-                news.className =
-                    "news-item";
-
-
-                const url =
-                    item.url ||
-                    item.link ||
-                    "";
-
-
-                news.innerHTML = `
-                    <div class="news-source">
-                        ${escapeHtml(
-                            item.source ||
-                            item.publisher ||
-                            ""
-                        )}
-                    </div>
-
-                    <div
-                        class="news-title"
-                        onclick="window.open('${escapeHtml(
-                            url
-                        )}', '_blank')"
-                    >
-                        ${escapeHtml(
-                            item.title ||
-                            item.name ||
-                            ""
-                        )}
-                    </div>
-
-                    <div class="news-snippet">
-                        ${escapeHtml(
-                            item.description ||
-                            item.snippet ||
-                            ""
-                        )}
-                    </div>
-                `;
-
-
-                resultsMain.appendChild(
-                    news
-                );
-
-            }
-        );
-
-
-        renderPagination(
-            data.totalPages ||
-            data.pages ||
-            5
-        );
-
-
-    } catch (error) {
-
-        console.error(
-            error
-        );
-
-        resultsMain.innerHTML = `
-            <div class="no-results">
-                News search failed.
-            </div>
-        `;
-
-    }
-
-}
-
-
-/* =========================================================
-   VIDEOS
-========================================================= */
-
-async function loadVideos() {
-
-    resultsMain.innerHTML = `
-        <div class="loading">
-            Loading videos...
-        </div>
-    `;
-
-
-    try {
-
-        const response =
-            await fetch(
-                `/api/search?q=${encodeURIComponent(
-                    currentQuery
-                )}&page=${currentPage}`
+        const url =
+            new URL(
+                value,
+                window.location.href
             );
-
-
-        const data =
-            await response.json();
-
-
-        const results =
-            data.results ||
-            data.items ||
-            [];
-
-
-        resultsMain.innerHTML =
-            "";
-
-
-        if (!results.length) {
-
-            resultsMain.innerHTML = `
-                <div class="no-results">
-                    No videos found.
-                </div>
-            `;
-
-            return;
-
-        }
-
-
-        results.forEach(
-            item => {
-
-                const video =
-                    document.createElement(
-                        "div"
-                    );
-
-                video.className =
-                    "video-item";
-
-
-                const thumbnail =
-                    item.thumbnail ||
-                    item.image ||
-                    "";
-
-
-                video.innerHTML = `
-                    ${
-                        thumbnail
-                            ? `
-                                <img
-                                    class="video-thumb"
-                                    src="${escapeHtml(
-                                        thumbnail
-                                    )}"
-                                    alt=""
-                                >
-                              `
-                            : ""
-                    }
-
-                    <div class="video-content">
-
-                        <div class="video-title">
-                            ${escapeHtml(
-                                item.title ||
-                                item.name ||
-                                ""
-                            )}
-                        </div>
-
-                        <div class="video-description">
-                            ${escapeHtml(
-                                item.description ||
-                                item.snippet ||
-                                ""
-                            )}
-                        </div>
-
-                    </div>
-                `;
-
-
-                resultsMain.appendChild(
-                    video
-                );
-
-            }
-        );
-
-
-        renderPagination(
-            data.totalPages ||
-            data.pages ||
-            5
-        );
-
-
-    } catch (error) {
-
-        console.error(
-            error
-        );
-
-        resultsMain.innerHTML = `
-            <div class="no-results">
-                Video search failed.
-            </div>
-        `;
-
-    }
-
-}
-
-
-/* =========================================================
-   PAGINATION
-========================================================= */
-
-function renderPagination(
-    totalPages
-) {
-
-    pagination.innerHTML =
-        "";
-
-
-    if (
-        !totalPages ||
-        totalPages <= 1
-    ) {
-        return;
-    }
-
-
-    const maxPages =
-        Math.min(
-            Number(totalPages),
-            10
-        );
-
-
-    for (
-        let i = 1;
-        i <= maxPages;
-        i++
-    ) {
-
-        const btn =
-            document.createElement(
-                "button"
-            );
-
-        btn.className =
-            "page-btn";
-
 
         if (
-            i === currentPage
+            url.protocol !== "http:" &&
+            url.protocol !== "https:"
         ) {
 
-            btn.classList.add(
-                "active"
-            );
+            return null;
 
         }
 
+        return url.href;
 
-        btn.textContent =
-            i;
+    } catch {
 
-
-        btn.addEventListener(
-            "click",
-            () => {
-
-                currentPage =
-                    i;
-
-                loadResults();
-
-                window.scrollTo({
-                    top: 0,
-                    behavior: "smooth"
-                });
-
-            }
-        );
-
-
-        pagination.appendChild(
-            btn
-        );
+        return null;
 
     }
 
 }
 
 
-/* =========================================================
-   TABS
-========================================================= */
+/*
+    Some large sites commonly block iframe embedding.
+    For these, don't show a large blank iframe.
+*/
 
-document.querySelectorAll(
-    ".tab"
-).forEach(
-    tab => {
+function isKnownIframeBlockedHost(url) {
 
-        tab.addEventListener(
-            "click",
-            () => {
+    try {
 
-                const type =
-                    tab.dataset.tab;
+        const host =
+            new URL(url)
+                .hostname
+                .toLowerCase();
 
-                currentTab =
-                    type;
+        const blockedHosts = [
 
-                currentPage =
-                    1;
+            "google.com",
+            "www.google.com",
 
-                setActiveTab(
-                    type
-                );
+            "facebook.com",
+            "www.facebook.com",
 
-                loadResults();
+            "instagram.com",
+            "www.instagram.com",
 
-            }
+            "twitter.com",
+            "www.twitter.com",
+
+            "x.com",
+            "www.x.com",
+
+            "linkedin.com",
+            "www.linkedin.com"
+
+        ];
+
+
+        return blockedHosts.some(
+            blocked =>
+
+                host === blocked ||
+                host.endsWith(
+                    "." + blocked
+                )
         );
 
+    } catch {
+
+        return false;
+
     }
-);
+
+}
 
 
-function setActiveTab(
-    type
+/*
+    Show Website Viewer.
+*/
+
+function openWebsiteViewer(
+    rawUrl,
+    title = "Website"
 ) {
 
-    document.querySelectorAll(
-        ".tab"
-    ).forEach(
-        tab => {
+    const url =
+        normalizeUrl(
+            rawUrl
+        );
 
-            tab.classList.toggle(
-                "active",
-                tab.dataset.tab ===
-                type
-            );
+
+    if (!url) {
+
+        return;
+
+    }
+
+
+    clearTimeout(
+        websiteViewerTimer
+    );
+
+
+    currentWebsiteUrl =
+        url;
+
+
+    websiteViewerTitle.textContent =
+        title ||
+        "Website Viewer";
+
+
+    websiteViewerUrl.textContent =
+        url;
+
+
+    siteViewer.classList.add(
+        "show"
+    );
+
+
+    siteViewer.setAttribute(
+        "aria-hidden",
+        "false"
+    );
+
+
+    websiteViewerFallback.style.display =
+        "none";
+
+
+    websiteViewerLoading.style.display =
+        "flex";
+
+
+    siteViewerFrame.style.display =
+        "none";
+
+
+    siteViewerFrame.src =
+        "about:blank";
+
+
+    /*
+        If this host is known to reject iframe
+        embedding, immediately show fallback.
+    */
+
+    if (
+        isKnownIframeBlockedHost(
+            url
+        )
+    ) {
+
+        showWebsiteFallback();
+
+        scrollToWebsiteViewer();
+
+        return;
+
+    }
+
+
+    /*
+        Give the iframe a chance to load.
+    */
+
+    websiteViewerTimer =
+        setTimeout(
+            () => {
+
+                if (
+                    currentWebsiteUrl ===
+                    url
+                ) {
+
+                    showWebsiteFallback();
+
+                }
+
+            },
+            7000
+        );
+
+
+    requestAnimationFrame(
+        () => {
+
+            siteViewerFrame.style.display =
+                "block";
+
+            siteViewerFrame.src =
+                url;
+
+            scrollToWebsiteViewer();
 
         }
     );
 
 }
+
+
+/*
+    IMPORTANT:
+    Browsers do not provide a reliable iframe error
+    event for cross-origin blocked pages.
+
+    Therefore we use:
+    - known blocked domains
+    - timeout fallback
+*/
+
+siteViewerFrame.addEventListener(
+    "load",
+    () => {
+
+        /*
+            Do NOT assume that load means the site
+            successfully rendered. Browsers can fire
+            iframe load even when embedded content is
+            blocked.
+        */
+
+        websiteViewerLoading.style.display =
+            "none";
+
+    }
+);
+
+
+function showWebsiteFallback() {
+
+    clearTimeout(
+        websiteViewerTimer
+    );
+
+
+    websiteViewerLoading.style.display =
+        "none";
+
+
+    siteViewerFrame.style.display =
+        "none";
+
+
+    websiteViewerFallback.style.display =
+        "flex";
+
+}
+
+
+/*
+    Scroll viewer into screen.
+*/
+
+function scrollToWebsiteViewer() {
+
+    setTimeout(
+        () => {
+
+            siteViewer.scrollIntoView({
+                behavior: "smooth",
+                block: "start"
+            });
+
+        },
+        50
+    );
+
+}
+
+
+/*
+    Open current website in new tab.
+*/
+
+function openWebsiteInNewTab() {
+
+    if (!currentWebsiteUrl) {
+        return;
+    }
+
+    window.open(
+        currentWebsiteUrl,
+        "_blank",
+        "noopener,noreferrer"
+    );
+
+}
+
+
+/*
+    Close Website Viewer.
+*/
+
+function closeWebsiteViewer() {
+
+    clearTimeout(
+        websiteViewerTimer
+    );
+
+
+    currentWebsiteUrl =
+        "";
+
+
+    siteViewer.classList.remove(
+        "show"
+    );
+
+
+    siteViewer.setAttribute(
+        "aria-hidden",
+        "true"
+    );
+
+
+    websiteViewerLoading.style.display =
+        "none";
+
+
+    websiteViewerFallback.style.display =
+        "none";
+
+
+    siteViewerFrame.style.display =
+        "none";
+
+
+    siteViewerFrame.src =
+        "about:blank";
+
+}
+
+
+/* BUTTONS */
+
+websiteOpenButton.addEventListener(
+    "click",
+    openWebsiteInNewTab
+);
+
+
+websiteFallbackOpenButton.addEventListener(
+    "click",
+    openWebsiteInNewTab
+);
+
+
+websiteCloseButton.addEventListener(
+    "click",
+    closeWebsiteViewer
+);
+
+
+/* ESC CLOSE WEBSITE VIEWER */
+
+document.addEventListener(
+    "keydown",
+    event => {
+
+        if (
+            event.key === "Escape" &&
+            siteViewer.classList.contains(
+                "show"
+            )
+        ) {
+
+            closeWebsiteViewer();
+
+        }
+
+    }
+);
 
 
 /* =========================================================
    IMAGE LIGHTBOX
 ========================================================= */
 
-function openLightbox(
-    index
-) {
+function openLightbox(index) {
 
     if (
-        !imageItems.length
+        !currentImages.length
     ) {
+
         return;
+
     }
 
 
     currentImageIndex =
-        index;
-
-
-    zoomLevel =
-        1;
-
-    imageOffsetX =
-        0;
-
-    imageOffsetY =
-        0;
-
-
-    updateLightboxImage();
-
-    renderRelatedImages();
+        Math.max(
+            0,
+            Math.min(
+                index,
+                currentImages.length - 1
+            )
+        );
 
 
     lightbox.classList.add(
         "show"
     );
+
+
+    document.body.style.overflow =
+        "hidden";
+
+
+    renderViewerImage();
+
+    renderRelatedImages();
+
+    resetZoom();
 
 }
 
@@ -3133,13 +3500,26 @@ function closeLightbox() {
         "show"
     );
 
+
+    document.body.style.overflow =
+        "";
+
+
+    viewerImage.removeAttribute(
+        "src"
+    );
+
 }
 
 
-function updateLightboxImage() {
+/* =========================================================
+   VIEWER IMAGE
+========================================================= */
+
+function renderViewerImage() {
 
     const item =
-        imageItems[
+        currentImages[
             currentImageIndex
         ];
 
@@ -3149,119 +3529,88 @@ function updateLightboxImage() {
     }
 
 
-    const imageUrl =
-        item.image ||
-        item.original ||
-        item.thumbnail ||
-        item.url ||
-        item.src ||
-        "";
+    viewerImage.src =
+        item.image;
 
 
-    lightboxImage.src =
-        imageUrl;
+    viewerTitle.textContent =
+        `Image ${
+            currentImageIndex + 1
+        } of ${
+            currentImages.length
+        }`;
 
 
-    lightboxImage.alt =
-        item.title ||
-        currentQuery;
+    resetZoom();
 
-
-    updateZoom();
+    updateRelatedActive();
 
 }
 
 
-function renderRelatedImages() {
+/* =========================================================
+   NEXT / PREVIOUS
+========================================================= */
 
-    relatedGrid.innerHTML =
-        "";
+function nextImage() {
 
+    if (
+        !currentImages.length
+    ) {
 
-    imageItems.forEach(
-        (item, index) => {
+        return;
 
-            if (
-                index ===
-                currentImageIndex
-            ) {
-                return;
-            }
+    }
 
 
-            const imageUrl =
-                item.image ||
-                item.thumbnail ||
-                item.original ||
-                item.url ||
-                item.src ||
-                "";
+    currentImageIndex++;
 
 
-            if (!imageUrl) {
-                return;
-            }
+    if (
+        currentImageIndex >=
+        currentImages.length
+    ) {
+
+        currentImageIndex =
+            0;
+
+    }
 
 
-            const div =
-                document.createElement(
-                    "div"
-                );
+    renderViewerImage();
 
-            div.className =
-                "related-item";
+    renderRelatedImages();
+
+}
 
 
-            const img =
-                document.createElement(
-                    "img"
-                );
+function previousImage() {
+
+    if (
+        !currentImages.length
+    ) {
+
+        return;
+
+    }
 
 
-            img.src =
-                imageUrl;
+    currentImageIndex--;
 
 
-            img.alt =
-                item.title ||
-                currentQuery;
+    if (
+        currentImageIndex < 0
+    ) {
+
+        currentImageIndex =
+            currentImages.length - 1;
+
+    }
 
 
-            div.appendChild(
-                img
-            );
+    renderViewerImage();
 
-
-            div.addEventListener(
-                "click",
-                () => {
-
-                    currentImageIndex =
-                        index;
-
-                    zoomLevel =
-                        1;
-
-                    imageOffsetX =
-                        0;
-
-                    imageOffsetY =
-                        0;
-
-                    updateLightboxImage();
-
-                    renderRelatedImages();
-
-                }
-            );
-
-
-            relatedGrid.appendChild(
-                div
-            );
-
-        }
-    );
+    renderRelatedImages();
 
 }
 
@@ -3270,89 +3619,109 @@ function renderRelatedImages() {
    ZOOM
 ========================================================= */
 
-function updateZoom() {
-
-    lightboxImage.style.transform =
-        `translate(
-            ${imageOffsetX}px,
-            ${imageOffsetY}px
-        )
-        scale(${zoomLevel})`;
-
-}
-
-
 function zoomIn() {
 
-    zoomLevel =
-        Math.min(
-            zoomLevel + .25,
-            5
-        );
+    zoomValue += .25;
 
-    updateZoom();
+
+    if (
+        zoomValue > 5
+    ) {
+
+        zoomValue = 5;
+
+    }
+
+
+    applyTransform();
 
 }
 
 
 function zoomOut() {
 
-    zoomLevel =
-        Math.max(
-            zoomLevel - .25,
-            .5
-        );
+    zoomValue -= .25;
 
-    updateZoom();
+
+    if (
+        zoomValue < .5
+    ) {
+
+        zoomValue = .5;
+
+    }
+
+
+    if (
+        zoomValue <= 1
+    ) {
+
+        translateX = 0;
+
+        translateY = 0;
+
+    }
+
+
+    applyTransform();
 
 }
 
 
 function resetZoom() {
 
-    zoomLevel =
-        1;
+    zoomValue = 1;
 
-    imageOffsetX =
-        0;
+    translateX = 0;
 
-    imageOffsetY =
-        0;
+    translateY = 0;
 
-    updateZoom();
+    applyTransform();
 
 }
 
 
-/* =========================================================
-   ZOOM BUTTONS
-========================================================= */
+function applyTransform() {
 
-zoomInBtn.addEventListener(
-    "click",
-    zoomIn
-);
-
-
-zoomOutBtn.addEventListener(
-    "click",
-    zoomOut
-);
+    viewerImage.style.transform =
+        `translate(
+            ${translateX}px,
+            ${translateY}px
+        ) scale(${zoomValue})`;
 
 
-zoomResetBtn.addEventListener(
-    "click",
-    resetZoom
-);
+    zoomLevel.textContent =
+        Math.round(
+            zoomValue * 100
+        ) + "%";
+
+
+    viewerImageWrap.classList.toggle(
+        "zoomed",
+        zoomValue > 1
+    );
+
+}
 
 
 /* =========================================================
    MOUSE WHEEL ZOOM
 ========================================================= */
 
-lightboxImage.addEventListener(
+viewerImageWrap.addEventListener(
     "wheel",
     event => {
+
+        if (
+            !lightbox.classList.contains(
+                "show"
+            )
+        ) {
+
+            return;
+
+        }
+
 
         event.preventDefault();
 
@@ -3377,38 +3746,48 @@ lightboxImage.addEventListener(
 
 
 /* =========================================================
-   IMAGE DRAG
+   DRAG IMAGE
 ========================================================= */
 
-lightboxImage.addEventListener(
+viewerImageWrap.addEventListener(
     "mousedown",
     event => {
 
         if (
-            zoomLevel <= 1
+            zoomValue <= 1
         ) {
+
             return;
+
         }
 
 
-        dragging =
-            true;
+        dragging = true;
+
+
+        viewerImageWrap.classList.add(
+            "dragging"
+        );
 
 
         dragStartX =
-            event.clientX -
-            imageOffsetX;
-
+            event.clientX;
 
         dragStartY =
-            event.clientY -
-            imageOffsetY;
+            event.clientY;
+
+
+        startTranslateX =
+            translateX;
+
+        startTranslateY =
+            translateY;
 
     }
 );
 
 
-document.addEventListener(
+window.addEventListener(
     "mousemove",
     event => {
 
@@ -3417,202 +3796,521 @@ document.addEventListener(
         }
 
 
-        imageOffsetX =
+        translateX =
+            startTranslateX +
             event.clientX -
             dragStartX;
 
 
-        imageOffsetY =
+        translateY =
+            startTranslateY +
             event.clientY -
             dragStartY;
 
 
-        updateZoom();
+        applyTransform();
 
     }
 );
 
 
-document.addEventListener(
+window.addEventListener(
     "mouseup",
     () => {
 
-        dragging =
-            false;
+        dragging = false;
+
+        viewerImageWrap.classList.remove(
+            "dragging"
+        );
 
     }
 );
 
 
 /* =========================================================
-   LIGHTBOX BUTTONS
+   RELATED IMAGES
 ========================================================= */
 
-lightboxClose.addEventListener(
-    "click",
-    closeLightbox
-);
+function renderRelatedImages() {
+
+    relatedGrid.innerHTML =
+        "";
 
 
-lightbox.addEventListener(
-    "click",
-    event => {
+    currentImages.forEach(
+        (item, index) => {
+
+            const card =
+                document.createElement(
+                    "div"
+                );
+
+
+            card.className =
+                "related-card";
+
+
+            if (
+                index ===
+                currentImageIndex
+            ) {
+
+                card.classList.add(
+                    "active"
+                );
+
+            }
+
+
+            const img =
+                document.createElement(
+                    "img"
+                );
+
+
+            img.src =
+                item.image;
+
+
+            img.alt =
+                "Related image";
+
+
+            img.addEventListener(
+                "error",
+                () => {
+
+                    card.style.display =
+                        "none";
+
+                }
+            );
+
+
+            card.appendChild(
+                img
+            );
+
+
+            card.addEventListener(
+                "click",
+                () => {
+
+                    currentImageIndex =
+                        index;
+
+                    renderViewerImage();
+
+                    renderRelatedImages();
+
+                }
+            );
+
+
+            relatedGrid.appendChild(
+                card
+            );
+
+        }
+    );
+
+}
+
+
+function updateRelatedActive() {
+
+    const cards =
+        relatedGrid.querySelectorAll(
+            ".related-card"
+        );
+
+
+    cards.forEach(
+        (card, index) => {
+
+            card.classList.toggle(
+                "active",
+                index ===
+                currentImageIndex
+            );
+
+        }
+    );
+
+}
+
+
+/* =========================================================
+   PAGINATION
+========================================================= */
+
+function createPagination(
+    page,
+    hasMore,
+    callback,
+    totalPages = 0
+) {
+
+    pagination.innerHTML =
+        "";
+
+
+    if (
+        page > 1
+    ) {
+
+        pagination.appendChild(
+            createPageButton(
+                "‹ Previous",
+                () => {
+
+                    callback(
+                        page - 1
+                    );
+
+                    window.scrollTo({
+                        top: 0,
+                        behavior: "smooth"
+                    });
+
+                }
+            )
+        );
+
+    }
+
+
+    let start =
+        Math.max(
+            1,
+            page - 3
+        );
+
+
+    let end =
+        page + 3;
+
+
+    if (
+        totalPages > 0
+    ) {
+
+        end =
+            Math.min(
+                end,
+                totalPages
+            );
+
+    }
+
+
+    if (
+        start > 1
+    ) {
+
+        pagination.appendChild(
+            createPageButton(
+                "1",
+                () => callback(1),
+                page === 1
+            )
+        );
+
 
         if (
-            event.target ===
-            lightbox
+            start > 2
         ) {
 
-            closeLightbox();
+            const dots =
+                document.createElement(
+                    "span"
+                );
+
+            dots.textContent =
+                "...";
+
+            pagination.appendChild(
+                dots
+            );
 
         }
 
     }
-);
+
+
+    for (
+        let i = start;
+        i <= end;
+        i++
+    ) {
+
+        pagination.appendChild(
+            createPageButton(
+                String(i),
+                () => {
+
+                    callback(i);
+
+                    window.scrollTo({
+                        top: 0,
+                        behavior: "smooth"
+                    });
+
+                },
+                i === page
+            )
+        );
+
+    }
+
+
+    if (
+        hasMore
+    ) {
+
+        pagination.appendChild(
+            createPageButton(
+                "Next ›",
+                () => {
+
+                    callback(
+                        page + 1
+                    );
+
+                    window.scrollTo({
+                        top: 0,
+                        behavior: "smooth"
+                    });
+
+                }
+            )
+        );
+
+    }
+
+}
+
+
+function createPageButton(
+    text,
+    callback,
+    active = false
+) {
+
+    const button =
+        document.createElement(
+            "button"
+        );
+
+
+    button.className =
+        "page-btn";
+
+
+    button.textContent =
+        text;
+
+
+    if (active) {
+
+        button.classList.add(
+            "active"
+        );
+
+    }
+
+
+    button.addEventListener(
+        "click",
+        callback
+    );
+
+
+    return button;
+
+}
 
 
 /* =========================================================
    BACK BUTTON
 ========================================================= */
 
-backBtn.addEventListener(
-    "click",
-    () => {
+function goBack() {
 
-        if (
-            searchPage.style.display !==
-            "none"
-        ) {
+    if (
+        lightbox.classList.contains(
+            "show"
+        )
+    ) {
 
-            searchPage.style.display =
-                "none";
+        closeLightbox();
 
-            home.style.display =
-                "flex";
+        return;
 
-            return;
+    }
 
-        }
+
+    if (
+        siteViewer.classList.contains(
+            "show"
+        )
+    ) {
+
+        closeWebsiteViewer();
+
+        return;
+
+    }
+
+
+    if (
+        !document.body.classList.contains(
+            "home-mode"
+        )
+    ) {
+
+        goHome();
+
+        return;
+
+    }
+
+
+    if (
+        window.history.length > 1
+    ) {
 
         window.history.back();
 
     }
-);
+
+}
 
 
 /* =========================================================
    RELOAD
 ========================================================= */
 
-reloadBtn.addEventListener(
-    "click",
-    () => {
+function reloadPage() {
 
-        if (
-            currentQuery
-        ) {
+    window.location.reload();
 
-            loadResults();
-
-        } else {
-
-            location.reload();
-
-        }
-
-    }
-);
+}
 
 
 /* =========================================================
-   LOGO
+   COMING SOON
 ========================================================= */
 
-topLogo.addEventListener(
-    "click",
-    () => {
+function showComingSoon(name) {
 
-        searchPage.style.display =
-            "none";
+    closeWebsiteViewer();
 
-        home.style.display =
-            "flex";
 
-        homeSearch.focus();
+    resultsBox.style.display =
+        "block";
 
-    }
-);
+
+    imageGrid.style.display =
+        "none";
+
+
+    pagination.innerHTML =
+        "";
+
+
+    statusBox.textContent =
+        name;
+
+
+    resultsBox.innerHTML = `
+
+        <div class="message">
+
+            🚧 ${escapeHtml(name)}
+            is not connected yet.
+
+        </div>
+
+    `;
+
+}
 
 
 /* =========================================================
-   SEARCH BUTTON
+   DARK MODE
 ========================================================= */
 
-searchBtn.addEventListener(
-    "click",
-    () => {
+function updateDarkModeButton() {
 
-        performSearch();
-
-    }
-);
+    const button =
+        document.getElementById(
+            "darkModeButton"
+        );
 
 
-/* =========================================================
-   LUCKY BUTTON
-========================================================= */
+    if (
+        document.body.classList.contains(
+            "dark"
+        )
+    ) {
 
-luckyBtn.addEventListener(
-    "click",
-    () => {
+        button.textContent =
+            "☀️";
 
-        const history =
-            getHistory();
+        button.title =
+            "Light mode";
 
+    } else {
 
-        if (
-            history.length
-        ) {
+        button.textContent =
+            "🌙";
 
-            const randomQuery =
-                history[
-                    Math.floor(
-                        Math.random() *
-                        history.length
-                    )
-                ];
-
-
-            homeSearch.value =
-                randomQuery;
-
-
-            performSearch();
-
-        } else {
-
-            homeSearch.focus();
-
-        }
+        button.title =
+            "Dark mode";
 
     }
-);
+
+}
 
 
-/* =========================================================
-   CLEAR HISTORY
-========================================================= */
+function toggleDarkMode() {
 
-clearHistoryBtn.addEventListener(
-    "click",
-    event => {
+    document.body.classList.toggle(
+        "dark"
+    );
 
-        event.stopPropagation();
 
-        clearHistory();
+    localStorage.setItem(
+        "mysearch-dark",
+        document.body.classList.contains(
+            "dark"
+        )
+            ? "1"
+            : "0"
+    );
 
-    }
-);
+
+    updateDarkModeButton();
+
+}
+
+
+if (
+    localStorage.getItem(
+        "mysearch-dark"
+    ) === "1"
+) {
+
+    document.body.classList.add(
+        "dark"
+    );
+
+}
+
+
+updateDarkModeButton();
 
 
 /* =========================================================
@@ -3629,180 +4327,47 @@ function showAbout() {
 }
 
 
-aboutBtn.addEventListener(
-    "click",
-    showAbout
-);
-
-
 /* =========================================================
-   DARK MODE
+   ESCAPE HTML
 ========================================================= */
 
-function setDarkMode(
-    enabled
-) {
+function escapeHtml(value) {
 
-    document.body.classList.toggle(
-        "dark",
-        enabled
-    );
+    return String(value)
 
+        .replace(
+            /&/g,
+            "&amp;"
+        )
 
-    localStorage.setItem(
-        "mysearch-dark",
-        enabled
-            ? "1"
-            : "0"
-    );
+        .replace(
+            /</g,
+            "&lt;"
+        )
 
+        .replace(
+            />/g,
+            "&gt;"
+        )
 
-    darkBtn.textContent =
-        enabled
-            ? "Light"
-            : "Dark";
+        .replace(
+            /"/g,
+            "&quot;"
+        )
 
-}
-
-
-darkBtn.addEventListener(
-    "click",
-    () => {
-
-        const enabled =
-            document.body.classList.contains(
-                "dark"
-            );
-
-        setDarkMode(
-            !enabled
+        .replace(
+            /'/g,
+            "&#039;"
         );
 
-    }
-);
-
-
-/* =========================================================
-   RESTORE DARK MODE
-========================================================= */
-
-if (
-    localStorage.getItem(
-        "mysearch-dark"
-    ) === "1"
-) {
-
-    setDarkMode(
-        true
-    );
-
 }
 
 
 /* =========================================================
-   KEYBOARD CONTROLS FOR VIEWER
+   INITIALIZE
 ========================================================= */
 
-document.addEventListener(
-    "keydown",
-    event => {
-
-        if (
-            !lightbox.classList.contains(
-                "show"
-            )
-        ) {
-            return;
-        }
-
-
-        if (
-            event.key ===
-            "Escape"
-        ) {
-
-            closeLightbox();
-
-        }
-
-
-        if (
-            event.key ===
-            "ArrowRight"
-        ) {
-
-            if (
-                currentImageIndex <
-                imageItems.length - 1
-            ) {
-
-                currentImageIndex++;
-
-                updateLightboxImage();
-
-                renderRelatedImages();
-
-            }
-
-        }
-
-
-        if (
-            event.key ===
-            "ArrowLeft"
-        ) {
-
-            if (
-                currentImageIndex >
-                0
-            ) {
-
-                currentImageIndex--;
-
-                updateLightboxImage();
-
-                renderRelatedImages();
-
-            }
-
-        }
-
-
-        if (
-            event.key === "+"
-        ) {
-
-            zoomIn();
-
-        }
-
-
-        if (
-            event.key === "-"
-        ) {
-
-            zoomOut();
-
-        }
-
-
-        if (
-            event.key === "0"
-        ) {
-
-            resetZoom();
-
-        }
-
-    }
-);
-
-
-/* INITIALIZE */
-
-historyBox.style.display = "none";
 renderHistory();
-historyBox.style.display = "none";
 
 </script>
 
