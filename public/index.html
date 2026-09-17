@@ -1,18 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>MySearch</title>
-
 <style>
-
-/* =========================================================
-   RESET
-========================================================= */
-
 * {
     box-sizing: border-box;
 }
@@ -39,26 +31,25 @@ body.dark {
     color: #e8eaed;
 }
 
-button,
-input {
-    font-family: inherit;
-}
-
-
 /* =========================================================
    TOP BAR
 ========================================================= */
 
 .topbar {
-    height: 62px;
+    height: 64px;
+    width: 100%;
+
     display: flex;
     align-items: center;
-    padding: 0 22px;
-    border-bottom: 1px solid #e5e5e5;
+
+    padding: 0 18px;
+
     background: #fff;
+    border-bottom: 1px solid #e5e5e5;
+
     position: sticky;
     top: 0;
-    z-index: 1000;
+    z-index: 5000;
 }
 
 body.dark .topbar {
@@ -66,27 +57,28 @@ body.dark .topbar {
     border-color: #3c4043;
 }
 
-
 /* LEFT */
 
 .top-left {
     display: flex;
     align-items: center;
-    gap: 5px;
-    min-width: 210px;
+    gap: 4px;
+
+    min-width: 230px;
 }
 
-
-/* NAV BUTTON */
-
 .nav-btn {
-    width: 38px;
-    height: 38px;
+    width: 40px;
+    height: 40px;
+
     border: 0;
     border-radius: 50%;
+
     background: transparent;
     color: #5f6368;
-    font-size: 21px;
+
+    font-size: 22px;
+
     cursor: pointer;
 }
 
@@ -102,38 +94,35 @@ body.dark .nav-btn:hover {
     background: #303134;
 }
 
-
 /* LOGO */
 
 .logo {
-    margin-left: 7px;
+    margin-left: 8px;
+
     font-size: 25px;
     font-weight: bold;
+
     letter-spacing: -1.5px;
+
     cursor: pointer;
     white-space: nowrap;
 }
 
-.logo .b,
-.home-logo .b {
+.logo .b {
     color: #4285f4;
 }
 
-.logo .r,
-.home-logo .r {
+.logo .r {
     color: #ea4335;
 }
 
-.logo .y,
-.home-logo .y {
+.logo .y {
     color: #fbbc05;
 }
 
-.logo .g,
-.home-logo .g {
+.logo .g {
     color: #34a853;
 }
-
 
 /* =========================================================
    TOP SEARCH
@@ -141,20 +130,25 @@ body.dark .nav-btn:hover {
 
 .top-search-area {
     flex: 1;
+
     display: flex;
-    justify-content: center;
-    padding: 0 20px;
+    justify-content: flex-start;
+
+    padding: 0 25px;
 }
 
 .top-search {
-    width: min(650px, 100%);
+    width: min(680px, 100%);
     height: 46px;
-    border: 1px solid #dfe1e5;
-    border-radius: 24px;
+
     display: flex;
     align-items: center;
+
     padding: 0 14px;
+
     background: #fff;
+    border: 1px solid #dfe1e5;
+    border-radius: 25px;
 }
 
 body.dark .top-search {
@@ -163,59 +157,75 @@ body.dark .top-search {
 }
 
 .top-search:focus-within {
-    box-shadow: 0 1px 6px rgba(32,33,36,.18);
+    box-shadow: 0 1px 6px rgba(32,33,36,.2);
 }
 
 .top-search-icon {
+    margin-right: 10px;
     color: #70757a;
     font-size: 18px;
-    margin-right: 10px;
 }
 
 .top-search input {
     flex: 1;
+
     min-width: 0;
+
     border: 0;
     outline: 0;
+
     background: transparent;
     color: inherit;
+
     font-size: 16px;
 }
 
 .top-search-clear {
+    display: none;
+
     border: 0;
     background: transparent;
+
     color: #70757a;
-    font-size: 20px;
+
+    font-size: 22px;
+
     cursor: pointer;
-    display: none;
 }
 
 .top-search-button {
     border: 0;
     background: transparent;
+
     color: #4285f4;
-    font-size: 19px;
+
+    font-size: 18px;
+
     cursor: pointer;
 }
-
 
 /* RIGHT */
 
 .top-right {
     min-width: 210px;
+
     display: flex;
     justify-content: flex-end;
     align-items: center;
-    gap: 4px;
+
+    gap: 5px;
 }
 
 .top-btn {
     border: 0;
     background: transparent;
+
     color: inherit;
+
     padding: 9px 12px;
+
     border-radius: 7px;
+
     cursor: pointer;
 }
 
@@ -227,43 +237,68 @@ body.dark .top-btn:hover {
     background: #303134;
 }
 
-
 /* =========================================================
    HOME
 ========================================================= */
 
 .home {
-    min-height: calc(100vh - 62px);
+    min-height: calc(100vh - 64px);
+
     display: flex;
     flex-direction: column;
     align-items: center;
+
     padding-top: 15vh;
 }
 
 .home-logo {
     font-size: 64px;
     font-weight: bold;
+
     letter-spacing: -4px;
+
     margin-bottom: 30px;
 }
 
+.home-logo .b {
+    color: #4285f4;
+}
 
-/* HOME SEARCH */
+.home-logo .r {
+    color: #ea4335;
+}
+
+.home-logo .y {
+    color: #fbbc05;
+}
+
+.home-logo .g {
+    color: #34a853;
+}
+
+/* =========================================================
+   HOME SEARCH
+========================================================= */
 
 .home-search-area {
     width: min(650px, 94vw);
+
     position: relative;
 }
 
 .home-search {
     width: 100%;
-    height: 53px;
-    border: 1px solid #dfe1e5;
-    border-radius: 28px;
+    height: 54px;
+
     display: flex;
     align-items: center;
+
     padding: 0 17px;
+
     background: #fff;
+
+    border: 1px solid #dfe1e5;
+    border-radius: 28px;
 }
 
 body.dark .home-search {
@@ -276,29 +311,36 @@ body.dark .home-search {
 }
 
 .home-search-icon {
+    margin-right: 11px;
+
     color: #70757a;
     font-size: 20px;
-    margin-right: 11px;
 }
 
 .home-search input {
     flex: 1;
+
     border: 0;
     outline: 0;
+
     background: transparent;
     color: inherit;
+
     font-size: 17px;
 }
 
 .home-clear {
+    display: none;
+
     border: 0;
     background: transparent;
-    color: #70757a;
-    font-size: 21px;
-    cursor: pointer;
-    display: none;
-}
 
+    color: #70757a;
+
+    font-size: 22px;
+
+    cursor: pointer;
+}
 
 /* =========================================================
    SUGGESTIONS
@@ -306,16 +348,23 @@ body.dark .home-search {
 
 .suggestions {
     display: none;
+
     position: absolute;
+
     left: 0;
     right: 0;
-    top: 58px;
+    top: 60px;
+
     background: #fff;
+
     border: 1px solid #dfe1e5;
     border-radius: 12px;
+
     overflow: hidden;
-    z-index: 2000;
-    box-shadow: 0 4px 12px rgba(0,0,0,.14);
+
+    z-index: 6000;
+
+    box-shadow: 0 5px 15px rgba(0,0,0,.15);
 }
 
 body.dark .suggestions {
@@ -324,11 +373,14 @@ body.dark .suggestions {
 }
 
 .suggestion-item {
-    padding: 11px 17px;
-    cursor: pointer;
+    padding: 12px 17px;
+
     display: flex;
     align-items: center;
+
     gap: 10px;
+
+    cursor: pointer;
 }
 
 .suggestion-item:hover {
@@ -339,21 +391,22 @@ body.dark .suggestion-item:hover {
     background: #3c4043;
 }
 
-
 /* =========================================================
    HISTORY
 ========================================================= */
 
 .history-box {
+  display: none;
     width: min(650px, 94vw);
+
     margin-top: 28px;
-    display: none;
 }
 
 .history-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
+
     margin-bottom: 7px;
 }
 
@@ -369,17 +422,24 @@ body.dark .history-title {
 .clear-history {
     border: 0;
     background: transparent;
+
     color: #1a73e8;
+
     cursor: pointer;
+
     font-size: 13px;
 }
 
 .history-item {
-    padding: 9px 4px;
+    padding: 9px 5px;
+
     display: flex;
     align-items: center;
+
     gap: 10px;
-    border-radius: 6px;
+
+    border-radius: 7px;
+
     cursor: pointer;
 }
 
@@ -397,11 +457,7 @@ body.dark .history-item:hover {
 
 .history-text {
     flex: 1;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
 }
-
 
 /* =========================================================
    HOME BUTTONS
@@ -410,15 +466,20 @@ body.dark .history-item:hover {
 .home-buttons {
     display: flex;
     gap: 12px;
+
     margin-top: 25px;
 }
 
 .home-btn {
     border: 1px solid #f8f9fa;
+
     background: #f8f9fa;
     color: inherit;
-    padding: 10px 18px;
+
+    padding: 10px 19px;
+
     border-radius: 5px;
+
     cursor: pointer;
 }
 
@@ -431,7 +492,6 @@ body.dark .home-btn {
     border-color: #dadce0;
 }
 
-
 /* =========================================================
    SEARCH PAGE
 ========================================================= */
@@ -440,14 +500,17 @@ body.dark .home-btn {
     display: none;
 }
 
-
 /* =========================================================
    TABS
 ========================================================= */
 
 .tabs-bar {
+    width: 100%;
+
     border-bottom: 1px solid #eee;
+
     padding-left: 22px;
+
     background: #fff;
 }
 
@@ -457,18 +520,23 @@ body.dark .tabs-bar {
 }
 
 .tabs {
-    max-width: 1000px;
-    margin: auto;
+    width: 100%;
+
     display: flex;
+
     gap: 28px;
 }
 
 .tab {
     border: 0;
     background: transparent;
+
     color: #5f6368;
+
     padding: 14px 4px;
+
     cursor: pointer;
+
     border-bottom: 3px solid transparent;
 }
 
@@ -481,23 +549,23 @@ body.dark .tab {
     border-bottom-color: #1a73e8;
 }
 
-
 /* =========================================================
-   CONTENT
+   MAIN CONTENT
+   RESULTS LEFT SIDE
 ========================================================= */
 
 .content {
-    width: calc(100% - 44px);
+    width: 100%;
+
     margin: 0;
-    padding: 24px 0 80px 22px;
+    padding: 25px 30px 80px;
 }
-
-
-/* STATUS */
 
 .status {
     color: #70757a;
+
     font-size: 13px;
+
     margin-bottom: 20px;
 }
 
@@ -505,24 +573,31 @@ body.dark .status {
     color: #9aa0a6;
 }
 
-
-/* =========================================================
-   RESULTS
-========================================================= */
+/* IMPORTANT:
+   Results stay on LEFT.
+*/
 
 .results {
-    width: min(780px, 100%);
-    margin-left: 0;
+    width: 780px;
+    max-width: 100%;
+
+    margin: 0;
 }
 
+/* =========================================================
+   RESULT
+========================================================= */
+
 .result {
-    margin-bottom: 28px;
+    margin-bottom: 30px;
 }
 
 .result-title {
     color: #1a0dab;
+
     font-size: 20px;
     line-height: 1.3;
+
     cursor: pointer;
 }
 
@@ -536,9 +611,12 @@ body.dark .result-title {
 
 .result-url {
     color: #188038;
+
     font-size: 13px;
+
     margin-top: 5px;
     margin-bottom: 5px;
+
     word-break: break-all;
 }
 
@@ -548,7 +626,9 @@ body.dark .result-url {
 
 .result-description {
     color: #4d5156;
+
     font-size: 14px;
+
     line-height: 1.55;
 }
 
@@ -556,26 +636,37 @@ body.dark .result-description {
     color: #bdc1c6;
 }
 
-
 /* =========================================================
    IMAGE GRID
 ========================================================= */
 
 .image-grid {
-    width: min(1000px, 100%);
+    width: 100%;
+
     display: grid;
-    grid-template-columns: repeat(5, minmax(0, 1fr));
+
+    grid-template-columns:
+        repeat(5, minmax(0, 1fr));
+
     gap: 15px;
 }
 
 .image-card {
     height: 175px;
+
     border-radius: 9px;
+
     overflow: hidden;
+
     border: 1px solid #e0e0e0;
+
     background: #f8f9fa;
+
     cursor: pointer;
-    transition: transform .15s, box-shadow .15s;
+
+    transition:
+        transform .15s,
+        box-shadow .15s;
 }
 
 body.dark .image-card {
@@ -585,16 +676,19 @@ body.dark .image-card {
 
 .image-card:hover {
     transform: translateY(-2px);
-    box-shadow: 0 4px 13px rgba(0,0,0,.18);
+
+    box-shadow:
+        0 4px 13px rgba(0,0,0,.18);
 }
 
 .image-card img {
     width: 100%;
     height: 100%;
+
     object-fit: cover;
+
     display: block;
 }
-
 
 /* =========================================================
    LOADING
@@ -602,17 +696,24 @@ body.dark .image-card {
 
 .loading {
     text-align: center;
+
     padding: 55px 10px;
+
     color: #70757a;
 }
 
 .spinner {
     width: 32px;
     height: 32px;
+
     border: 3px solid #ddd;
+
     border-top-color: #4285f4;
+
     border-radius: 50%;
+
     margin: 0 auto 14px;
+
     animation: spin .8s linear infinite;
 }
 
@@ -622,21 +723,21 @@ body.dark .image-card {
     }
 }
 
-
 /* =========================================================
    MESSAGE
 ========================================================= */
 
 .message {
     padding: 45px 10px;
+
     text-align: center;
+
     color: #70757a;
 }
 
 .error {
     color: #d93025;
 }
-
 
 /* =========================================================
    PAGINATION
@@ -645,22 +746,31 @@ body.dark .image-card {
 .pagination {
     width: 780px;
     max-width: 100%;
+
     display: flex;
-    justify-content: center;
+
+    justify-content: flex-start;
     align-items: center;
+
     gap: 7px;
+
     margin-top: 45px;
+
     flex-wrap: wrap;
 }
 
 .page-btn {
     min-width: 40px;
     height: 40px;
+
     padding: 0 12px;
+
     border: 1px solid #dadce0;
     border-radius: 6px;
+
     background: #fff;
     color: #202124;
+
     cursor: pointer;
 }
 
@@ -681,237 +791,25 @@ body.dark .page-btn:hover {
 .page-btn.active {
     background: #1a73e8;
     color: white;
+
     border-color: #1a73e8;
 }
 
-
 /* =========================================================
-   WEBSITE VIEWER
-   IMPORTANT:
-   This is OUTSIDE the search results layout.
-========================================================= */
-
-.site-viewer {
-    display: none;
-    width: calc(100% - 44px);
-    margin: 0 22px 45px;
-    border: 1px solid #dadce0;
-    border-radius: 14px;
-    overflow: hidden;
-    background: #fff;
-    box-shadow: 0 3px 15px rgba(0,0,0,.12);
-}
-
-body.dark .site-viewer {
-    background: #303134;
-    border-color: #5f6368;
-    box-shadow: 0 3px 15px rgba(0,0,0,.35);
-}
-
-.site-viewer.show {
-    display: block;
-}
-
-
-/* VIEWER HEADER */
-
-.website-viewer-header {
-    min-height: 62px;
-    padding: 10px 14px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 15px;
-    border-bottom: 1px solid #e5e5e5;
-    background: #fff;
-}
-
-body.dark .website-viewer-header {
-    background: #292a2d;
-    border-color: #3c4043;
-}
-
-.website-viewer-info {
-    min-width: 0;
-    flex: 1;
-}
-
-.website-viewer-title {
-    font-size: 15px;
-    font-weight: 600;
-    color: #202124;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-}
-
-body.dark .website-viewer-title {
-    color: #e8eaed;
-}
-
-.website-viewer-url {
-    margin-top: 4px;
-    font-size: 12px;
-    color: #70757a;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-}
-
-body.dark .website-viewer-url {
-    color: #9aa0a6;
-}
-
-.website-viewer-actions {
-    display: flex;
-    align-items: center;
-    gap: 7px;
-    flex-shrink: 0;
-}
-
-.website-viewer-btn {
-    border: 1px solid #dadce0;
-    background: #fff;
-    color: #202124;
-    border-radius: 7px;
-    padding: 8px 12px;
-    cursor: pointer;
-    white-space: nowrap;
-}
-
-.website-viewer-btn:hover {
-    background: #f1f3f4;
-}
-
-body.dark .website-viewer-btn {
-    background: #303134;
-    color: #e8eaed;
-    border-color: #5f6368;
-}
-
-body.dark .website-viewer-btn:hover {
-    background: #3c4043;
-}
-
-.website-viewer-close {
-    width: 38px;
-    height: 38px;
-    padding: 0;
-    font-size: 22px;
-}
-
-
-/* VIEWER BODY */
-
-.website-viewer-body {
-    position: relative;
-    width: 100%;
-    min-height: 520px;
-    background: #f8f9fa;
-}
-
-body.dark .website-viewer-body {
-    background: #202124;
-}
-
-
-/* IFRAME */
-
-#siteViewerFrame {
-    width: 100%;
-    height: 72vh;
-    min-height: 520px;
-    max-height: 900px;
-    display: none;
-    border: 0;
-    background: #fff;
-}
-
-
-/* LOADING */
-
-.website-viewer-loading {
-    min-height: 520px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    color: #70757a;
-    gap: 10px;
-}
-
-.viewer-loading-spinner {
-    width: 38px;
-    height: 38px;
-    border: 3px solid #ddd;
-    border-top-color: #4285f4;
-    border-radius: 50%;
-    animation: spin .8s linear infinite;
-}
-
-
-/* FALLBACK */
-
-.website-viewer-fallback {
-    min-height: 520px;
-    padding: 50px 20px;
-    display: none;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    color: #5f6368;
-}
-
-body.dark .website-viewer-fallback {
-    color: #bdc1c6;
-}
-
-.viewer-fallback-icon {
-    width: 64px;
-    height: 64px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: #f1f3f4;
-    color: #5f6368;
-    font-size: 30px;
-    margin-bottom: 18px;
-}
-
-body.dark .viewer-fallback-icon {
-    background: #303134;
-    color: #bdc1c6;
-}
-
-.website-viewer-fallback h3 {
-    margin: 0 0 10px;
-    color: #202124;
-    font-size: 20px;
-}
-
-body.dark .website-viewer-fallback h3 {
-    color: #e8eaed;
-}
-
-.website-viewer-fallback p {
-    max-width: 600px;
-    line-height: 1.5;
-    margin: 0 0 20px;
-}
-
-
-/* =========================================================
-   IMAGE LIGHTBOX
+   IMAGE VIEWER
 ========================================================= */
 
 .lightbox {
     display: none;
+
     position: fixed;
+
     inset: 0;
+
     z-index: 99999;
-    background: rgba(0,0,0,.95);
+
+    background: rgba(0,0,0,.96);
+
     flex-direction: column;
 }
 
@@ -919,40 +817,57 @@ body.dark .website-viewer-fallback h3 {
     display: flex;
 }
 
-
-/* VIEWER TOP */
+/* =========================================================
+   VIEWER TOP
+========================================================= */
 
 .viewer-top {
-    height: 58px;
+    height: 60px;
+
     flex-shrink: 0;
+
     display: flex;
+
     align-items: center;
     justify-content: space-between;
+
     padding: 0 16px;
+
     color: white;
 }
 
 .viewer-title {
     max-width: 55vw;
+
     overflow: hidden;
+
     white-space: nowrap;
+
     text-overflow: ellipsis;
+
     font-size: 14px;
 }
 
 .viewer-actions {
     display: flex;
+
     gap: 7px;
 }
 
 .viewer-btn {
     width: 42px;
     height: 42px;
+
     border: 0;
+
     border-radius: 50%;
+
     background: rgba(255,255,255,.12);
+
     color: white;
+
     cursor: pointer;
+
     font-size: 21px;
 }
 
@@ -960,26 +875,37 @@ body.dark .website-viewer-fallback h3 {
     background: rgba(255,255,255,.27);
 }
 
-
-/* VIEWER MAIN */
+/* =========================================================
+   VIEWER MAIN
+========================================================= */
 
 .viewer-main {
     flex: 1;
+
     min-height: 0;
+
     position: relative;
+
     display: flex;
+
     align-items: center;
     justify-content: center;
+
     overflow: hidden;
 }
 
 .viewer-image-wrap {
     width: 100%;
     height: 100%;
+
     display: flex;
+
     align-items: center;
     justify-content: center;
+
     overflow: hidden;
+
+    cursor: default;
 }
 
 .viewer-image-wrap.zoomed {
@@ -993,33 +919,49 @@ body.dark .website-viewer-fallback h3 {
 .viewer-image {
     max-width: 88vw;
     max-height: 72vh;
+
     object-fit: contain;
+
     user-select: none;
+
     -webkit-user-drag: none;
+
     transform-origin: center center;
+
     transition: transform .12s ease;
 }
 
-
-/* IMAGE NAV */
+/* =========================================================
+   VIEWER NAVIGATION
+========================================================= */
 
 .viewer-nav {
     position: absolute;
+
     top: 50%;
+
     transform: translateY(-50%);
+
     width: 50px;
     height: 70px;
+
     border: 0;
+
     border-radius: 10px;
+
     background: rgba(0,0,0,.45);
+
     color: white;
+
     font-size: 38px;
+
     cursor: pointer;
+
     z-index: 10;
 }
 
 .viewer-nav:hover {
-    background: rgba(0,0,0,.7);
+    background: rgba(0,0,0,.72);
 }
 
 .viewer-prev {
@@ -1030,31 +972,47 @@ body.dark .website-viewer-fallback h3 {
     right: 16px;
 }
 
-
-/* ZOOM */
+/* =========================================================
+   ZOOM CONTROLS
+========================================================= */
 
 .zoom-controls {
     position: absolute;
+
     bottom: 17px;
     left: 50%;
+
     transform: translateX(-50%);
+
     display: flex;
+
     align-items: center;
+
     gap: 5px;
+
     background: rgba(0,0,0,.58);
+
     padding: 6px;
+
     border-radius: 25px;
+
     z-index: 20;
 }
 
 .zoom-btn {
     width: 38px;
     height: 38px;
+
     border: 0;
+
     border-radius: 50%;
+
     background: rgba(255,255,255,.13);
+
     color: white;
+
     cursor: pointer;
+
     font-size: 21px;
 }
 
@@ -1064,41 +1022,59 @@ body.dark .website-viewer-fallback h3 {
 
 .zoom-level {
     min-width: 55px;
+
     text-align: center;
+
     color: white;
+
     font-size: 13px;
 }
 
-
-/* RELATED */
+/* =========================================================
+   RELATED IMAGES
+========================================================= */
 
 .related-section {
     height: 142px;
+
     flex-shrink: 0;
+
     padding: 9px 17px 14px;
+
     background: rgba(0,0,0,.76);
 }
 
 .related-title {
     color: white;
+
     font-size: 13px;
+
     opacity: .82;
+
     margin-bottom: 7px;
 }
 
 .related-grid {
     height: 94px;
+
     display: flex;
+
     gap: 10px;
+
     overflow-x: auto;
 }
 
 .related-card {
     flex: 0 0 105px;
+
     height: 84px;
+
     border-radius: 7px;
+
     overflow: hidden;
+
     border: 2px solid transparent;
+
     cursor: pointer;
 }
 
@@ -1109,10 +1085,285 @@ body.dark .website-viewer-fallback h3 {
 .related-card img {
     width: 100%;
     height: 100%;
+
     object-fit: cover;
+
     display: block;
 }
 
+
+/* =========================================================
+   GOOGLE-STYLE IMAGE DETAILS
+========================================================= */
+.viewer-source-row {
+    min-width: 0;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.viewer-source-icon {
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    background: rgba(255,255,255,.12);
+    color: #fff;
+    flex: 0 0 auto;
+}
+
+.viewer-source-info {
+    min-width: 0;
+}
+
+.viewer-source-name {
+    color: #fff;
+    font-size: 13px;
+    font-weight: 600;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.viewer-image-title {
+    color: rgba(255,255,255,.72);
+    font-size: 12px;
+    margin-top: 2px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: min(55vw, 620px);
+}
+
+.viewer-detail-bar {
+    flex-shrink: 0;
+    background: #fff;
+    color: #202124;
+    padding: 15px 20px 14px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 18px;
+    border-top: 1px solid rgba(255,255,255,.12);
+}
+
+.viewer-detail-text {
+    min-width: 0;
+    flex: 1;
+}
+
+.viewer-detail-title {
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 1.35;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.viewer-detail-url {
+    margin-top: 4px;
+    color: #5f6368;
+    font-size: 12px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.viewer-detail-actions {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-shrink: 0;
+}
+
+.viewer-action-btn {
+    min-height: 38px;
+    border: 1px solid #dadce0;
+    background: #fff;
+    color: #202124;
+    border-radius: 20px;
+    padding: 0 15px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+}
+
+.viewer-action-btn:hover {
+    background: #f8f9fa;
+}
+
+.viewer-action-btn.visit {
+    background: #1a73e8;
+    color: #fff;
+    border-color: #1a73e8;
+}
+
+.viewer-action-btn.visit:hover {
+    background: #1765cc;
+}
+
+.viewer-action-btn.saved {
+    background: #e8f0fe;
+    color: #1967d2;
+    border-color: #aecbfa;
+}
+
+.viewer-menu {
+    position: relative;
+}
+
+.viewer-menu-panel {
+    display: none;
+    position: absolute;
+    right: 0;
+    bottom: 46px;
+    width: 190px;
+    padding: 6px;
+    border-radius: 10px;
+    background: #fff;
+    box-shadow: 0 5px 24px rgba(0,0,0,.25);
+    z-index: 100;
+}
+
+.viewer-menu.open .viewer-menu-panel {
+    display: block;
+}
+
+.viewer-menu-item {
+    width: 100%;
+    border: 0;
+    background: transparent;
+    text-align: left;
+    padding: 10px 11px;
+    border-radius: 7px;
+    cursor: pointer;
+    color: #202124;
+    font-size: 14px;
+}
+
+.viewer-menu-item:hover {
+    background: #f1f3f4;
+}
+
+body.dark .viewer-detail-bar {
+    background: #202124;
+    color: #e8eaed;
+}
+
+body.dark .viewer-detail-url {
+    color: #9aa0a6;
+}
+
+body.dark .viewer-action-btn {
+    background: #303134;
+    color: #e8eaed;
+    border-color: #5f6368;
+}
+
+body.dark .viewer-action-btn:hover {
+    background: #3c4043;
+}
+
+body.dark .viewer-action-btn.saved {
+    background: #174ea6;
+    color: #fff;
+    border-color: #4285f4;
+}
+
+body.dark .viewer-menu-panel {
+    background: #303134;
+}
+
+body.dark .viewer-menu-item {
+    color: #e8eaed;
+}
+
+body.dark .viewer-menu-item:hover {
+    background: #3c4043;
+}
+
+.viewer-image-wrap {
+    touch-action: none;
+    overscroll-behavior: contain;
+}
+
+.viewer-image {
+    will-change: transform;
+}
+
+@media (max-width: 750px) {
+    .viewer-top {
+        height: 56px;
+        padding: 0 9px;
+    }
+
+    .viewer-title {
+        max-width: 52vw;
+    }
+
+    .viewer-actions {
+        gap: 3px;
+    }
+
+    .viewer-btn {
+        width: 38px;
+        height: 38px;
+        font-size: 19px;
+    }
+
+    .viewer-detail-bar {
+        align-items: stretch;
+        flex-direction: column;
+        padding: 12px 14px;
+        gap: 10px;
+    }
+
+    .viewer-detail-title,
+    .viewer-detail-url {
+        white-space: normal;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 2;
+    }
+
+    .viewer-detail-actions {
+        width: 100%;
+    }
+
+    .viewer-action-btn {
+        flex: 1;
+        padding: 0 10px;
+    }
+
+    .viewer-image {
+        max-width: 100vw;
+        max-height: 62vh;
+    }
+
+    .related-section {
+        height: 112px;
+        padding: 7px 10px 10px;
+    }
+
+    .related-grid {
+        height: 72px;
+    }
+
+    .related-card {
+        flex-basis: 86px;
+        height: 66px;
+    }
+
+    .zoom-controls {
+        bottom: 10px;
+    }
+}
 
 /* =========================================================
    HOME MODE
@@ -1120,10 +1371,6 @@ body.dark .website-viewer-fallback h3 {
 
 body.home-mode .top-search-area {
     display: none;
-}
-
-body.home-mode .topbar {
-    position: relative;
 }
 
 body.home-mode .top-left {
@@ -1134,7 +1381,6 @@ body.home-mode .top-right {
     flex: 1;
 }
 
-
 /* =========================================================
    RESPONSIVE
 ========================================================= */
@@ -1142,20 +1388,18 @@ body.home-mode .top-right {
 @media (max-width: 1000px) {
 
     .top-left {
-        min-width: 170px;
+        min-width: 190px;
     }
 
     .top-right {
-        min-width: 170px;
+        min-width: 160px;
     }
 
     .image-grid {
         grid-template-columns:
             repeat(4, minmax(0, 1fr));
     }
-
 }
-
 
 @media (max-width: 750px) {
 
@@ -1171,10 +1415,6 @@ body.home-mode .top-right {
         min-width: auto;
     }
 
-    .top-btn {
-        padding: 7px;
-    }
-
     .logo {
         font-size: 21px;
     }
@@ -1185,17 +1425,19 @@ body.home-mode .top-right {
 
     .tabs {
         gap: 18px;
+
         overflow-x: auto;
     }
 
     .content {
-        width: calc(100% - 30px);
         padding-left: 15px;
+        padding-right: 15px;
     }
 
     .image-grid {
         grid-template-columns:
             repeat(2, minmax(0, 1fr));
+
         gap: 10px;
     }
 
@@ -1203,46 +1445,23 @@ body.home-mode .top-right {
         height: 155px;
     }
 
-    .site-viewer {
-        width: calc(100% - 30px);
-        margin-left: 15px;
-        margin-right: 15px;
+    .viewer-image {
+        max-width: 96vw;
+        max-height: 65vh;
     }
-
-    .website-viewer-header {
-        align-items: flex-start;
-    }
-
 }
-
-
-@media (max-width: 600px) {
-
-    .website-viewer-header {
-        flex-direction: column;
-    }
-
-    .website-viewer-actions {
-        width: 100%;
-    }
-
-    .website-viewer-btn {
-        flex: 1;
-    }
-
-}
-
 
 @media (max-width: 500px) {
+
+    .logo {
+        display: none;
+    }
 
     .nav-btn {
         width: 34px;
         height: 34px;
-        font-size: 18px;
-    }
 
-    .logo {
-        display: none;
+        font-size: 18px;
     }
 
     .top-search-area {
@@ -1257,14 +1476,10 @@ body.home-mode .top-right {
         font-size: 48px;
     }
 
-    .viewer-image {
-        max-width: 96vw;
-        max-height: 65vh;
-    }
-
     .viewer-nav {
         width: 42px;
         height: 58px;
+
         font-size: 30px;
     }
 
@@ -1275,577 +1490,360 @@ body.home-mode .top-right {
     .viewer-next {
         right: 7px;
     }
-
-    #siteViewerFrame {
-        min-height: 420px;
-        height: 70vh;
-    }
-
-    .website-viewer-loading,
-    .website-viewer-fallback {
-        min-height: 420px;
-    }
-
 }
-
-
-/* =========================================================
-   END CSS
-========================================================= */
-
 </style>
 </head>
-
-
 <body class="home-mode">
-
-
-<!-- ========================================================
+<!-- =========================================================
      TOP BAR
 ========================================================= -->
-
 <header class="topbar">
 
-    <div class="top-left">
+
+<div class="top-left">
+
+    <button
+        id="backButton"
+        class="nav-btn"
+        onclick="goBack()"
+        title="Back"
+    >
+        ←
+    </button>
+
+    <button
+        class="nav-btn"
+        onclick="reloadPage()"
+        title="Reload"
+    >
+        ↻
+    </button>
+
+    <div
+        class="logo"
+        onclick="goHome()"
+    >
+        <span class="b">M</span><span class="r">y</span><span class="y">S</span><span class="b">e</span><span class="g">a</span><span class="r">r</span><span class="b">c</span><span class="g">h</span>
+    </div>
+
+</div>
+
+
+<div class="top-search-area">
+
+    <div class="top-search">
+
+        <span class="top-search-icon">
+            🔍
+        </span>
+
+        <input
+            id="topSearchInput"
+            type="text"
+            placeholder="Search..."
+            autocomplete="off"
+        >
 
         <button
-            id="backButton"
-            class="nav-btn"
-            onclick="goBack()"
-            title="Back"
+            id="topSearchClear"
+            class="top-search-clear"
+            onclick="clearTopSearch()"
         >
-            ←
+            ×
         </button>
 
         <button
-            class="nav-btn"
-            onclick="reloadPage()"
-            title="Reload"
+            class="top-search-button"
+            onclick="performSearch()"
         >
-            ↻
+            🔍
         </button>
-
-        <div
-            class="logo"
-            onclick="goHome()"
-        >
-            <span class="b">M</span><span class="r">y</span><span class="y">S</span><span class="b">e</span><span class="g">a</span><span class="r">r</span><span class="b">c</span><span class="g">h</span>
-        </div>
 
     </div>
 
-
-    <!-- TOP SEARCH -->
-
-    <div class="top-search-area">
-
-        <div class="top-search">
-
-            <span class="top-search-icon">
-                🔍
-            </span>
-
-            <input
-                id="topSearchInput"
-                type="text"
-                placeholder="Search..."
-                autocomplete="off"
-            >
-
-            <button
-                id="topSearchClear"
-                class="top-search-clear"
-                onclick="clearTopSearch()"
-            >
-                ×
-            </button>
-
-            <button
-                class="top-search-button"
-                onclick="performSearch()"
-            >
-                🔍
-            </button>
-
-        </div>
-
-    </div>
+</div>
 
 
-    <!-- RIGHT -->
+<div class="top-right">
 
-    <div class="top-right">
+    <button
+        class="top-btn"
+        onclick="showAbout()"
+    >
+        About
+    </button>
 
-        <button
-            class="top-btn"
-            onclick="showAbout()"
-        >
-            About
-        </button>
+    <button
+        class="top-btn"
+        onclick="toggleDarkMode()"
+        title="Dark mode"
+    >
+        🌙
+    </button>
 
-        <button
-            id="darkModeButton"
-            class="top-btn"
-            onclick="toggleDarkMode()"
-            title="Dark mode"
-        >
-            🌙
-        </button>
+</div>
 
-    </div>
 
 </header>
-
-
-
-<!-- ========================================================
+<!-- =========================================================
      HOME
 ========================================================= -->
-
 <section
     id="home"
     class="home"
 >
 
-    <div class="home-logo">
-        <span class="b">M</span><span class="r">y</span><span class="y">S</span><span class="b">e</span><span class="g">a</span><span class="r">r</span><span class="b">c</span><span class="g">h</span>
-    </div>
+
+<div class="home-logo">
+
+    <span class="b">M</span><span class="r">y</span><span class="y">S</span><span class="b">e</span><span class="g">a</span><span class="r">r</span><span class="b">c</span><span class="g">h</span>
+
+</div>
 
 
-    <!-- HOME SEARCH -->
+<div class="home-search-area">
 
-    <div class="home-search-area">
+    <div class="home-search">
 
-        <div class="home-search">
+        <span class="home-search-icon">
+            🔍
+        </span>
 
-            <span class="home-search-icon">
-                🔍
-            </span>
+        <input
+            id="homeSearch"
+            type="text"
+            placeholder="Search the web..."
+            autocomplete="off"
+        >
 
-            <input
-                id="homeSearch"
-                type="text"
-                placeholder="Search the web..."
-                autocomplete="off"
-            >
-
-            <button
-                id="homeClear"
-                class="home-clear"
-                onclick="clearHomeSearch()"
-            >
-                ×
-            </button>
-
-        </div>
-
-
-        <div
-            id="suggestions"
-            class="suggestions"
-        ></div>
+        <button
+            id="homeClear"
+            class="home-clear"
+            onclick="clearHomeSearch()"
+        >
+            ×
+        </button>
 
     </div>
 
-
-    <!-- HISTORY -->
 
     <div
-        id="historyBox"
-        class="history-box"
-    >
+        id="suggestions"
+        class="suggestions"
+    ></div>
 
-        <div class="history-header">
+</div>
 
-            <div class="history-title">
-                Recent searches
-            </div>
 
-            <button
-                class="clear-history"
-                onclick="clearHistory()"
-            >
-                Clear
-            </button>
+<!-- HISTORY -->
 
+<div
+    id="historyBox"
+    class="history-box"
+>
+
+    <div class="history-header">
+
+        <div class="history-title">
+            Recent searches
         </div>
 
-        <div id="historyList"></div>
-
-    </div>
-
-
-    <!-- BUTTONS -->
-
-    <div class="home-buttons">
-
         <button
-            class="home-btn"
-            onclick="performSearch()"
+            class="clear-history"
+            onclick="clearHistory()"
         >
-            MySearch
-        </button>
-
-        <button
-            class="home-btn"
-            onclick="performImageSearch()"
-        >
-            Images
+            Clear
         </button>
 
     </div>
+
+    <div id="historyList"></div>
+
+</div>
+
+
+<!-- BUTTONS -->
+
+<div class="home-buttons">
+
+    <button
+        class="home-btn"
+        onclick="performSearch()"
+    >
+        MySearch
+    </button>
+
+    <button
+        class="home-btn"
+        onclick="performImageSearch()"
+    >
+        Images
+    </button>
+
+</div>
+
 
 </section>
-
-
-
-<!-- ========================================================
+<!-- =========================================================
      SEARCH PAGE
 ========================================================= -->
-
 <section
     id="searchPage"
     class="search-page"
 >
 
 
-    <!-- TABS -->
+<!-- TABS -->
 
-    <div class="tabs-bar">
+<div class="tabs-bar">
 
-        <div class="tabs">
+    <div class="tabs">
 
-            <button
-                id="tabAll"
-                class="tab active"
-                onclick="showTab('all')"
-            >
-                All
-            </button>
-
-            <button
-                id="tabImages"
-                class="tab"
-                onclick="showTab('images')"
-            >
-                Images
-            </button>
-
-            <button
-                id="tabNews"
-                class="tab"
-                onclick="showTab('news')"
-            >
-                News
-            </button>
-
-            <button
-                id="tabVideos"
-                class="tab"
-                onclick="showTab('videos')"
-            >
-                Videos
-            </button>
-
-        </div>
-
-    </div>
-
-
-    <!-- CONTENT -->
-
-    <main class="content">
-
-        <div
-            id="status"
-            class="status"
-        ></div>
-
-
-        <div
-            id="results"
-            class="results"
-        ></div>
-
-
-        <div
-            id="imageGrid"
-            class="image-grid"
-            style="display:none;"
-        ></div>
-
-
-        <div
-            id="pagination"
-            class="pagination"
-        ></div>
-
-    </main>
-
-</section>
-
-
-
-<!-- ========================================================
-     WEBSITE VIEWER
-     
-     IMPORTANT:
-     This is NOT inside the results flex/layout.
-========================================================= -->
-
-<div
-    id="siteViewer"
-    class="site-viewer"
-    aria-hidden="true"
->
-
-    <div class="website-viewer-header">
-
-        <div class="website-viewer-info">
-
-            <div
-                id="websiteViewerTitle"
-                class="website-viewer-title"
-            >
-                Website Viewer
-            </div>
-
-            <div
-                id="websiteViewerUrl"
-                class="website-viewer-url"
-            >
-                —
-            </div>
-
-        </div>
-
-
-        <div class="website-viewer-actions">
-
-            <button
-                id="websiteOpenButton"
-                class="website-viewer-btn"
-            >
-                ↗ Open in new tab
-            </button>
-
-            <button
-                id="websiteCloseButton"
-                class="website-viewer-btn website-viewer-close"
-                title="Close viewer"
-            >
-                ×
-            </button>
-
-        </div>
-
-    </div>
-
-
-    <div class="website-viewer-body">
-
-
-        <!-- LOADING -->
-
-        <div
-            id="websiteViewerLoading"
-            class="website-viewer-loading"
+        <button
+            id="tabAll"
+            class="tab active"
+            onclick="showTab('all')"
         >
+            All
+        </button>
 
-            <div class="viewer-loading-spinner"></div>
-
-            <div>
-                Loading website...
-            </div>
-
-        </div>
-
-
-        <!-- IFRAME -->
-
-        <iframe
-            id="siteViewerFrame"
-            title="Website Viewer"
-            loading="eager"
-            referrerpolicy="no-referrer"
-        ></iframe>
-
-
-        <!-- FALLBACK -->
-
-        <div
-            id="websiteViewerFallback"
-            class="website-viewer-fallback"
+        <button
+            id="tabImages"
+            class="tab"
+            onclick="showTab('images')"
         >
+            Images
+        </button>
 
-            <div class="viewer-fallback-icon">
-                ↗
-            </div>
+        <button
+            id="tabNews"
+            class="tab"
+            onclick="showTab('news')"
+        >
+            News
+        </button>
 
-            <h3>
-                This website can't be shown here
-            </h3>
-
-            <p>
-                The website may not allow itself to be embedded
-                inside another webpage.
-            </p>
-
-            <button
-                id="websiteFallbackOpenButton"
-                class="website-viewer-btn"
-            >
-                ↗ Open website
-            </button>
-
-        </div>
+        <button
+            id="tabVideos"
+            class="tab"
+            onclick="showTab('videos')"
+        >
+            Videos
+        </button>
 
     </div>
 
 </div>
 
 
+<!-- CONTENT -->
 
-<!-- ========================================================
+<main class="content">
+
+    <div
+        id="status"
+        class="status"
+    ></div>
+
+
+    <div
+        id="results"
+        class="results"
+    ></div>
+
+
+    <div
+        id="imageGrid"
+        class="image-grid"
+        style="display:none;"
+    ></div>
+
+
+    <div
+        id="pagination"
+        class="pagination"
+    ></div>
+
+</main>
+
+
+</section>
+<!-- =========================================================
      IMAGE VIEWER
 ========================================================= -->
-
 <div
     id="lightbox"
     class="lightbox"
 >
 
-    <div class="viewer-top">
-
-        <div
-            id="viewerTitle"
-            class="viewer-title"
-        >
-            Image
+<div class="viewer-top">
+    <div class="viewer-source-row">
+        <div class="viewer-source-icon" id="viewerSourceIcon">🌐</div>
+        <div class="viewer-source-info">
+            <div id="viewerTitle" class="viewer-source-name">Image</div>
+            <div id="viewerImageTitle" class="viewer-image-title">Selected image</div>
         </div>
-
-
-        <div class="viewer-actions">
-
-            <button
-                class="viewer-btn"
-                onclick="zoomOut()"
-            >
-                −
-            </button>
-
-            <button
-                class="viewer-btn"
-                onclick="resetZoom()"
-            >
-                ⟳
-            </button>
-
-            <button
-                class="viewer-btn"
-                onclick="zoomIn()"
-            >
-                +
-            </button>
-
-            <button
-                class="viewer-btn"
-                onclick="closeLightbox()"
-            >
-                ×
-            </button>
-
-        </div>
-
     </div>
 
-
-    <div class="viewer-main">
-
-        <button
-            class="viewer-nav viewer-prev"
-            onclick="previousImage()"
-        >
-            ‹
-        </button>
-
-
-        <div
-            id="viewerImageWrap"
-            class="viewer-image-wrap"
-        >
-
-            <img
-                id="viewerImage"
-                class="viewer-image"
-                src=""
-                alt="Selected image"
-                draggable="false"
-            >
-
-        </div>
-
-
-        <button
-            class="viewer-nav viewer-next"
-            onclick="nextImage()"
-        >
-            ›
-        </button>
-
-
-        <div class="zoom-controls">
-
-            <button
-                class="zoom-btn"
-                onclick="zoomOut()"
-            >
-                −
-            </button>
-
-            <div
-                id="zoomLevel"
-                class="zoom-level"
-            >
-                100%
-            </div>
-
-            <button
-                class="zoom-btn"
-                onclick="zoomIn()"
-            >
-                +
-            </button>
-
-            <button
-                class="zoom-btn"
-                onclick="resetZoom()"
-            >
-                ⟳
-            </button>
-
-        </div>
-
+    <div class="viewer-actions">
+        <button class="viewer-btn" onclick="previousImage()" title="Previous image">‹</button>
+        <button class="viewer-btn" onclick="nextImage()" title="Next image">›</button>
+        <button class="viewer-btn" onclick="zoomOut()" title="Zoom out">−</button>
+        <button class="viewer-btn" onclick="resetZoom()" title="Reset zoom">⟳</button>
+        <button class="viewer-btn" onclick="zoomIn()" title="Zoom in">+</button>
+        <button class="viewer-btn" onclick="closeLightbox()" title="Close">×</button>
     </div>
-
-
-    <div class="related-section">
-
-        <div class="related-title">
-            Related images
-        </div>
-
-        <div
-            id="relatedGrid"
-            class="related-grid"
-        ></div>
-
-    </div>
-
 </div>
 
+<div class="viewer-main">
+    <button class="viewer-nav viewer-prev" onclick="previousImage()" title="Previous image">‹</button>
 
+    <div id="viewerImageWrap" class="viewer-image-wrap">
+        <img
+            id="viewerImage"
+            class="viewer-image"
+            src=""
+            alt="Selected image"
+            draggable="false"
+        >
+    </div>
 
+    <button class="viewer-nav viewer-next" onclick="nextImage()" title="Next image">›</button>
+
+    <div class="zoom-controls">
+        <button class="zoom-btn" onclick="zoomOut()">−</button>
+        <div id="zoomLevel" class="zoom-level">100%</div>
+        <button class="zoom-btn" onclick="zoomIn()">+</button>
+        <button class="zoom-btn" onclick="resetZoom()">⟳</button>
+    </div>
+</div>
+
+<div class="viewer-detail-bar">
+    <div class="viewer-detail-text">
+        <div id="viewerDetailTitle" class="viewer-detail-title">Selected image</div>
+        <div id="viewerDetailUrl" class="viewer-detail-url">Source</div>
+    </div>
+
+    <div class="viewer-detail-actions">
+        <button id="viewerVisitBtn" class="viewer-action-btn visit" onclick="visitCurrentImage()">↗ Visit</button>
+        <button id="viewerShareBtn" class="viewer-action-btn" onclick="shareCurrentImage()">↗ Share</button>
+        <button id="viewerSaveBtn" class="viewer-action-btn" onclick="toggleSaveCurrentImage()">🔖 Save</button>
+        <div id="viewerMenu" class="viewer-menu">
+            <button class="viewer-action-btn" onclick="toggleViewerMenu()">⋮ More</button>
+            <div class="viewer-menu-panel">
+                <button class="viewer-menu-item" onclick="copyCurrentImageUrl()">Copy image URL</button>
+                <button class="viewer-menu-item" onclick="downloadCurrentImage()">Open image</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="related-section">
+    <div class="related-title">Related images</div>
+    <div id="relatedGrid" class="related-grid"></div>
+</div>
+
+</div>
 <script>
 
 /* =========================================================
@@ -1853,30 +1851,36 @@ body.home-mode .top-right {
 ========================================================= */
 
 let currentQuery = "";
+
 let currentPage = 1;
+
 let currentTab = "all";
 
 let currentImages = [];
+
 let currentImageIndex = 0;
 
 let zoomValue = 1;
 
 let translateX = 0;
+
 let translateY = 0;
 
 let dragging = false;
 
 let dragStartX = 0;
+
 let dragStartY = 0;
 
 let startTranslateX = 0;
+
 let startTranslateY = 0;
 
-
-/* WEBSITE VIEWER */
-
-let currentWebsiteUrl = "";
-let websiteViewerTimer = null;
+let pointerCache = new Map();
+let pinchStartDistance = 0;
+let pinchStartZoom = 1;
+let pointerMoved = false;
+let viewerMenuOpen = false;
 
 
 /* =========================================================
@@ -1940,37 +1944,26 @@ const relatedGrid =
 const zoomLevel =
     document.getElementById("zoomLevel");
 
+const viewerSourceIcon =
+    document.getElementById("viewerSourceIcon");
 
-/* WEBSITE VIEWER ELEMENTS */
+const viewerImageTitle =
+    document.getElementById("viewerImageTitle");
 
-const siteViewer =
-    document.getElementById("siteViewer");
+const viewerDetailTitle =
+    document.getElementById("viewerDetailTitle");
 
-const siteViewerFrame =
-    document.getElementById("siteViewerFrame");
+const viewerDetailUrl =
+    document.getElementById("viewerDetailUrl");
 
-const websiteViewerTitle =
-    document.getElementById("websiteViewerTitle");
+const viewerVisitBtn =
+    document.getElementById("viewerVisitBtn");
 
-const websiteViewerUrl =
-    document.getElementById("websiteViewerUrl");
+const viewerSaveBtn =
+    document.getElementById("viewerSaveBtn");
 
-const websiteViewerLoading =
-    document.getElementById("websiteViewerLoading");
-
-const websiteViewerFallback =
-    document.getElementById("websiteViewerFallback");
-
-const websiteOpenButton =
-    document.getElementById("websiteOpenButton");
-
-const websiteCloseButton =
-    document.getElementById("websiteCloseButton");
-
-const websiteFallbackOpenButton =
-    document.getElementById(
-        "websiteFallbackOpenButton"
-    );
+const viewerMenu =
+    document.getElementById("viewerMenu");
 
 
 /* =========================================================
@@ -2002,7 +1995,6 @@ function getHistory() {
         return [];
 
     }
-
 }
 
 
@@ -2021,7 +2013,7 @@ function saveHistory(query) {
     history =
         history.filter(
             item =>
-                String(item).toLowerCase() !==
+                item.toLowerCase() !==
                 query.toLowerCase()
         );
 
@@ -2036,9 +2028,7 @@ function saveHistory(query) {
     );
 
     renderHistory();
-
 }
-
 
 function renderHistory() {
 
@@ -2053,7 +2043,6 @@ function renderHistory() {
             "none";
 
         return;
-
     }
 
     history.forEach(
@@ -2084,9 +2073,6 @@ function renderHistory() {
                     homeSearch.value =
                         query;
 
-                    suggestions.style.display =
-                        "none";
-
                     historyBox.style.display =
                         "none";
 
@@ -2101,7 +2087,6 @@ function renderHistory() {
 
         }
     );
-
 }
 
 
@@ -2112,7 +2097,6 @@ function clearHistory() {
     );
 
     renderHistory();
-
 }
 
 
@@ -2135,14 +2119,12 @@ function renderSuggestions() {
             "none";
 
         return;
-
     }
 
     const matches =
         getHistory().filter(
             item =>
-                String(item)
-                    .toLowerCase()
+                item.toLowerCase()
                     .includes(value)
         );
 
@@ -2152,7 +2134,6 @@ function renderSuggestions() {
             "none";
 
         return;
-
     }
 
     matches
@@ -2170,7 +2151,6 @@ function renderSuggestions() {
 
                 item.innerHTML = `
                     <span>🕘</span>
-
                     <span>
                         ${escapeHtml(query)}
                     </span>
@@ -2184,9 +2164,6 @@ function renderSuggestions() {
                             query;
 
                         suggestions.style.display =
-                            "none";
-
-                        historyBox.style.display =
                             "none";
 
                         performSearch();
@@ -2203,13 +2180,28 @@ function renderSuggestions() {
 
     suggestions.style.display =
         "block";
-
 }
 
 
 /* =========================================================
    HOME INPUT
 ========================================================= */
+homeSearch.addEventListener(
+    "focus",
+    () => {
+
+        const history =
+            getHistory();
+
+        if (!history.length) {
+            return;
+        }
+
+        historyBox.style.display =
+            "block";
+
+    }
+);
 
 homeSearch.addEventListener(
     "input",
@@ -2227,61 +2219,12 @@ homeSearch.addEventListener(
 
 
 homeSearch.addEventListener(
-    "focus",
-    () => {
-
-        if (!homeSearch.value.trim()) {
-
-            if (getHistory().length) {
-
-                renderHistory();
-
-                historyBox.style.display =
-                    "block";
-
-            }
-
-        } else {
-
-            renderSuggestions();
-
-        }
-
-    }
-);
-
-
-homeSearch.addEventListener(
-    "click",
-    () => {
-
-        if (!homeSearch.value.trim()) {
-
-            if (getHistory().length) {
-
-                renderHistory();
-
-                historyBox.style.display =
-                    "block";
-
-            }
-
-        }
-
-    }
-);
-
-
-homeSearch.addEventListener(
     "keydown",
     event => {
 
         if (event.key === "Enter") {
 
             suggestions.style.display =
-                "none";
-
-            historyBox.style.display =
                 "none";
 
             performSearch();
@@ -2337,11 +2280,7 @@ function clearHomeSearch() {
     suggestions.style.display =
         "none";
 
-    historyBox.style.display =
-        "none";
-
     homeSearch.focus();
-
 }
 
 
@@ -2353,7 +2292,6 @@ function clearTopSearch() {
         "none";
 
     topSearchInput.focus();
-
 }
 
 
@@ -2363,10 +2301,10 @@ function clearTopSearch() {
 
 function goHome() {
 
-    closeWebsiteViewer();
-
     currentQuery = "";
+
     currentPage = 1;
+
     currentTab = "all";
 
     home.style.display =
@@ -2379,25 +2317,17 @@ function goHome() {
         "home-mode"
     );
 
-    topSearchInput.value =
-        "";
+    topSearchInput.value = "";
 
     topSearchClear.style.display =
         "none";
 
-    suggestions.style.display =
-        "none";
-
-    historyBox.style.display =
-        "none";
-
-    renderHistory();
-
+  
 }
 
 
 /* =========================================================
-   SEARCH
+   PERFORM WEB SEARCH
 ========================================================= */
 
 function performSearch() {
@@ -2413,16 +2343,12 @@ function performSearch() {
         return;
     }
 
-    closeWebsiteViewer();
-
     currentQuery =
         query;
 
-    currentPage =
-        1;
+    currentPage = 1;
 
-    currentTab =
-        "all";
+    currentTab = "all";
 
     saveHistory(query);
 
@@ -2445,7 +2371,6 @@ function performSearch() {
     activateTab("all");
 
     search(1);
-
 }
 
 
@@ -2457,8 +2382,6 @@ async function search(page = 1) {
 
     currentPage =
         page;
-
-    closeWebsiteViewer();
 
     resultsBox.style.display =
         "block";
@@ -2525,7 +2448,6 @@ async function search(page = 1) {
                 `No results for "${currentQuery}"`;
 
             return;
-
         }
 
         statusBox.textContent =
@@ -2545,102 +2467,61 @@ async function search(page = 1) {
                 item.className =
                     "result";
 
-                const titleText =
-                    String(
+                const title =
+                    escapeHtml(
                         result.title ||
                         "Untitled"
                     );
 
                 const link =
-                    normalizeUrl(
+                    String(
                         result.link ||
                         result.url ||
-                        ""
+                        "#"
                     );
 
                 const description =
-                    String(
+                    escapeHtml(
                         result.description ||
                         ""
                     );
 
                 item.innerHTML = `
-
-                    <div
-                        class="result-title"
-                        role="button"
-                        tabindex="0"
-                    >
-                        ${escapeHtml(titleText)}
+                    <div class="result-title">
+                        ${title}
                     </div>
 
                     <div class="result-url">
-                        ${escapeHtml(
-                            link ||
-                            String(
-                                result.link ||
-                                result.url ||
-                                ""
-                            )
-                        )}
+                        ${escapeHtml(link)}
                     </div>
 
                     <div class="result-description">
-                        ${escapeHtml(
-                            description
-                        )}
+                        ${description}
                     </div>
-
                 `;
 
-
-                const titleElement =
-                    item.querySelector(
+                item
+                    .querySelector(
                         ".result-title"
-                    );
-
-
-                if (link) {
-
-                    titleElement.addEventListener(
+                    )
+                    .addEventListener(
                         "click",
                         () => {
 
-                            openWebsiteViewer(
-                                link,
-                                titleText
-                            );
-
-                        }
-                    );
-
-
-                    titleElement.addEventListener(
-                        "keydown",
-                        event => {
-
                             if (
-                                event.key ===
-                                "Enter"
+                                link &&
+                                link !== "#"
                             ) {
 
-                                openWebsiteViewer(
+                                window.open(
                                     link,
-                                    titleText
+                                    "_blank"
                                 );
 
                             }
 
                         }
                     );
-
-                } else {
-
-                    titleElement.style.cursor =
-                        "default";
-
-                }
-
 
                 resultsBox.appendChild(
                     item
@@ -2649,16 +2530,12 @@ async function search(page = 1) {
             }
         );
 
-
         createPagination(
             page,
-            Boolean(
-                data.hasMore
-            ),
+            Boolean(data.hasMore),
             search,
             Number(
-                data.totalPages ||
-                0
+                data.totalPages || 0
             )
         );
 
@@ -2667,7 +2544,6 @@ async function search(page = 1) {
         console.error(error);
 
         resultsBox.innerHTML = `
-
             <div class="message error">
 
                 Search failed.
@@ -2679,14 +2555,11 @@ async function search(page = 1) {
                 )}
 
             </div>
-
         `;
 
         statusBox.textContent =
             "Search error.";
-
     }
-
 }
 
 
@@ -2706,8 +2579,6 @@ function performImageSearch() {
     if (!query) {
         return;
     }
-
-    closeWebsiteViewer();
 
     currentQuery =
         query;
@@ -2739,7 +2610,6 @@ function performImageSearch() {
     activateTab("images");
 
     showImages(1);
-
 }
 
 
@@ -2749,10 +2619,9 @@ function performImageSearch() {
 
 function showTab(tab) {
 
+    closeLightbox();
     currentTab =
         tab;
-
-    closeWebsiteViewer();
 
     activateTab(tab);
 
@@ -2761,18 +2630,14 @@ function showTab(tab) {
         search(1);
 
         return;
-
     }
-
 
     if (tab === "images") {
 
         showImages(1);
 
         return;
-
     }
-
 
     if (tab === "news") {
 
@@ -2781,9 +2646,7 @@ function showTab(tab) {
         );
 
         return;
-
     }
-
 
     if (tab === "videos") {
 
@@ -2792,9 +2655,7 @@ function showTab(tab) {
         );
 
         return;
-
     }
-
 }
 
 
@@ -2812,7 +2673,6 @@ function activateTab(tab) {
             }
         );
 
-
     const ids = {
 
         all:
@@ -2829,12 +2689,10 @@ function activateTab(tab) {
 
     };
 
-
     const selected =
         document.getElementById(
             ids[tab]
         );
-
 
     if (selected) {
 
@@ -2843,7 +2701,6 @@ function activateTab(tab) {
         );
 
     }
-
 }
 
 
@@ -2856,8 +2713,6 @@ async function showImages(page = 1) {
     currentPage =
         page;
 
-    closeWebsiteViewer();
-
     resultsBox.style.display =
         "none";
 
@@ -2868,7 +2723,6 @@ async function showImages(page = 1) {
         "";
 
     imageGrid.innerHTML = `
-
         <div
             class="loading"
             style="grid-column:1/-1;"
@@ -2879,12 +2733,10 @@ async function showImages(page = 1) {
             Loading images...
 
         </div>
-
     `;
 
     statusBox.textContent =
         `Images for "${currentQuery}"`;
-
 
     try {
 
@@ -2898,10 +2750,8 @@ async function showImages(page = 1) {
                 page
             );
 
-
         const data =
             await response.json();
-
 
         if (!response.ok) {
 
@@ -2912,7 +2762,6 @@ async function showImages(page = 1) {
 
         }
 
-
         const images =
             Array.isArray(
                 data.images
@@ -2920,34 +2769,31 @@ async function showImages(page = 1) {
                 ? data.images
                 : [];
 
+        /*
+           IMPORTANT:
+           currentImages gets the actual image
+           objects returned by the backend.
+        */
 
         currentImages =
             images;
 
-
         if (!images.length) {
 
             imageGrid.innerHTML = `
-
                 <div
                     class="message"
                     style="grid-column:1/-1;"
                 >
-
                     No images found.
-
                 </div>
-
             `;
 
             return;
-
         }
-
 
         imageGrid.innerHTML =
             "";
-
 
         images.forEach(
             (item, index) => {
@@ -2960,22 +2806,31 @@ async function showImages(page = 1) {
                 card.className =
                     "image-card";
 
-
                 const img =
                     document.createElement(
                         "img"
                     );
 
+                /*
+                   IMPORTANT:
+                   Use item.image.
+                   Do NOT use item.original here.
+                */
 
                 img.src =
                     item.image;
 
                 img.alt =
+                    item.title ||
                     "Search image";
 
                 img.loading =
                     "lazy";
 
+                /*
+                   Clicking anywhere on the card
+                   opens the viewer.
+                */
 
                 card.addEventListener(
                     "click",
@@ -2988,7 +2843,6 @@ async function showImages(page = 1) {
                     }
                 );
 
-
                 img.addEventListener(
                     "error",
                     () => {
@@ -2998,7 +2852,6 @@ async function showImages(page = 1) {
 
                     }
                 );
-
 
                 card.appendChild(
                     img
@@ -3011,23 +2864,20 @@ async function showImages(page = 1) {
             }
         );
 
-
         createPagination(
             page,
-            Boolean(
-                data.hasMore
-            ),
-            showImages
+            Boolean(data.hasMore),
+            showImages,
+            Number(
+                data.totalPages || 0
+            )
         );
-
 
     } catch (error) {
 
         console.error(error);
 
-
         imageGrid.innerHTML = `
-
             <div
                 class="message error"
                 style="grid-column:1/-1;"
@@ -3042,429 +2892,21 @@ async function showImages(page = 1) {
                 )}
 
             </div>
-
         `;
 
     }
-
 }
 
 
 /* =========================================================
-   WEBSITE VIEWER
-========================================================= */
-
-
-/*
-    Only HTTP/HTTPS URLs are accepted.
-*/
-
-function normalizeUrl(rawUrl) {
-
-    try {
-
-        const value =
-            String(rawUrl || "").trim();
-
-        if (!value) {
-            return null;
-        }
-
-        const url =
-            new URL(
-                value,
-                window.location.href
-            );
-
-        if (
-            url.protocol !== "http:" &&
-            url.protocol !== "https:"
-        ) {
-
-            return null;
-
-        }
-
-        return url.href;
-
-    } catch {
-
-        return null;
-
-    }
-
-}
-
-
-/*
-    Some large sites commonly block iframe embedding.
-    For these, don't show a large blank iframe.
-*/
-
-function isKnownIframeBlockedHost(url) {
-
-    try {
-
-        const host =
-            new URL(url)
-                .hostname
-                .toLowerCase();
-
-        const blockedHosts = [
-
-            "google.com",
-            "www.google.com",
-
-            "facebook.com",
-            "www.facebook.com",
-
-            "instagram.com",
-            "www.instagram.com",
-
-            "twitter.com",
-            "www.twitter.com",
-
-            "x.com",
-            "www.x.com",
-
-            "linkedin.com",
-            "www.linkedin.com"
-
-        ];
-
-
-        return blockedHosts.some(
-            blocked =>
-
-                host === blocked ||
-                host.endsWith(
-                    "." + blocked
-                )
-        );
-
-    } catch {
-
-        return false;
-
-    }
-
-}
-
-
-/*
-    Show Website Viewer.
-*/
-
-function openWebsiteViewer(
-    rawUrl,
-    title = "Website"
-) {
-
-    const url =
-        normalizeUrl(
-            rawUrl
-        );
-
-
-    if (!url) {
-
-        return;
-
-    }
-
-
-    clearTimeout(
-        websiteViewerTimer
-    );
-
-
-    currentWebsiteUrl =
-        url;
-
-
-    websiteViewerTitle.textContent =
-        title ||
-        "Website Viewer";
-
-
-    websiteViewerUrl.textContent =
-        url;
-
-
-    siteViewer.classList.add(
-        "show"
-    );
-
-
-    siteViewer.setAttribute(
-        "aria-hidden",
-        "false"
-    );
-
-
-    websiteViewerFallback.style.display =
-        "none";
-
-
-    websiteViewerLoading.style.display =
-        "flex";
-
-
-    siteViewerFrame.style.display =
-        "none";
-
-
-    siteViewerFrame.src =
-        "about:blank";
-
-
-    /*
-        If this host is known to reject iframe
-        embedding, immediately show fallback.
-    */
-
-    if (
-        isKnownIframeBlockedHost(
-            url
-        )
-    ) {
-
-        showWebsiteFallback();
-
-        scrollToWebsiteViewer();
-
-        return;
-
-    }
-
-
-    /*
-        Give the iframe a chance to load.
-    */
-
-    websiteViewerTimer =
-        setTimeout(
-            () => {
-
-                if (
-                    currentWebsiteUrl ===
-                    url
-                ) {
-
-                    showWebsiteFallback();
-
-                }
-
-            },
-            7000
-        );
-
-
-    requestAnimationFrame(
-        () => {
-
-            siteViewerFrame.style.display =
-                "block";
-
-            siteViewerFrame.src =
-                url;
-
-            scrollToWebsiteViewer();
-
-        }
-    );
-
-}
-
-
-/*
-    IMPORTANT:
-    Browsers do not provide a reliable iframe error
-    event for cross-origin blocked pages.
-
-    Therefore we use:
-    - known blocked domains
-    - timeout fallback
-*/
-
-siteViewerFrame.addEventListener(
-    "load",
-    () => {
-
-        /*
-            Do NOT assume that load means the site
-            successfully rendered. Browsers can fire
-            iframe load even when embedded content is
-            blocked.
-        */
-
-        websiteViewerLoading.style.display =
-            "none";
-
-    }
-);
-
-
-function showWebsiteFallback() {
-
-    clearTimeout(
-        websiteViewerTimer
-    );
-
-
-    websiteViewerLoading.style.display =
-        "none";
-
-
-    siteViewerFrame.style.display =
-        "none";
-
-
-    websiteViewerFallback.style.display =
-        "flex";
-
-}
-
-
-/*
-    Scroll viewer into screen.
-*/
-
-function scrollToWebsiteViewer() {
-
-    setTimeout(
-        () => {
-
-            siteViewer.scrollIntoView({
-                behavior: "smooth",
-                block: "start"
-            });
-
-        },
-        50
-    );
-
-}
-
-
-/*
-    Open current website in new tab.
-*/
-
-function openWebsiteInNewTab() {
-
-    if (!currentWebsiteUrl) {
-        return;
-    }
-
-    window.open(
-        currentWebsiteUrl,
-        "_blank",
-        "noopener,noreferrer"
-    );
-
-}
-
-
-/*
-    Close Website Viewer.
-*/
-
-function closeWebsiteViewer() {
-
-    clearTimeout(
-        websiteViewerTimer
-    );
-
-
-    currentWebsiteUrl =
-        "";
-
-
-    siteViewer.classList.remove(
-        "show"
-    );
-
-
-    siteViewer.setAttribute(
-        "aria-hidden",
-        "true"
-    );
-
-
-    websiteViewerLoading.style.display =
-        "none";
-
-
-    websiteViewerFallback.style.display =
-        "none";
-
-
-    siteViewerFrame.style.display =
-        "none";
-
-
-    siteViewerFrame.src =
-        "about:blank";
-
-}
-
-
-/* BUTTONS */
-
-websiteOpenButton.addEventListener(
-    "click",
-    openWebsiteInNewTab
-);
-
-
-websiteFallbackOpenButton.addEventListener(
-    "click",
-    openWebsiteInNewTab
-);
-
-
-websiteCloseButton.addEventListener(
-    "click",
-    closeWebsiteViewer
-);
-
-
-/* ESC CLOSE WEBSITE VIEWER */
-
-document.addEventListener(
-    "keydown",
-    event => {
-
-        if (
-            event.key === "Escape" &&
-            siteViewer.classList.contains(
-                "show"
-            )
-        ) {
-
-            closeWebsiteViewer();
-
-        }
-
-    }
-);
-
-
-/* =========================================================
-   IMAGE LIGHTBOX
+   OPEN IMAGE VIEWER
 ========================================================= */
 
 function openLightbox(index) {
 
-    if (
-        !currentImages.length
-    ) {
-
+    if (!currentImages.length) {
         return;
-
     }
-
 
     currentImageIndex =
         Math.max(
@@ -3475,24 +2917,23 @@ function openLightbox(index) {
             )
         );
 
-
     lightbox.classList.add(
         "show"
     );
 
-
     document.body.style.overflow =
         "hidden";
 
-
+    closeViewerMenu();
     renderViewerImage();
-
     renderRelatedImages();
-
     resetZoom();
-
 }
 
+
+/* =========================================================
+   CLOSE IMAGE VIEWER
+========================================================= */
 
 function closeLightbox() {
 
@@ -3500,15 +2941,15 @@ function closeLightbox() {
         "show"
     );
 
-
     document.body.style.overflow =
         "";
 
+    viewerImage.src =
+        "";
 
-    viewerImage.removeAttribute(
-        "src"
-    );
-
+    closeViewerMenu();
+    pointerCache.clear();
+    dragging = false;
 }
 
 
@@ -3516,87 +2957,212 @@ function closeLightbox() {
    VIEWER IMAGE
 ========================================================= */
 
-function renderViewerImage() {
-
-    const item =
-        currentImages[
-            currentImageIndex
-        ];
-
-
-    if (!item) {
-        return;
-    }
-
-
-    viewerImage.src =
-        item.image;
-
-
-    viewerTitle.textContent =
-        `Image ${
-            currentImageIndex + 1
-        } of ${
-            currentImages.length
-        }`;
-
-
-    resetZoom();
-
-    updateRelatedActive();
-
+function getCurrentImageItem() {
+    return currentImages[currentImageIndex] || null;
 }
 
+function getPageUrl(item) {
+    if (!item) return "";
+    return String(item.page || item.url || item.link || item.original || "").trim();
+}
+
+function getImageUrl(item) {
+    if (!item) return "";
+    return String(item.image || item.thumbnail || item.src || "").trim();
+}
+
+function getImageTitle(item, index = currentImageIndex) {
+    if (!item) return "Selected image";
+    return String(item.title || item.name || item.caption || `Image ${index + 1}`).trim();
+}
+
+function getSourceName(item) {
+    const pageUrl = getPageUrl(item);
+    try {
+        const url = new URL(pageUrl);
+        return url.hostname.replace(/^www\./, "") || "Web image";
+    } catch {
+        return item && item.source ? String(item.source) : "Web image";
+    }
+}
+
+function getSavedImages() {
+    try {
+        const data = JSON.parse(localStorage.getItem("mysearch-saved-images") || "[]");
+        return Array.isArray(data) ? data : [];
+    } catch {
+        return [];
+    }
+}
+
+function isCurrentImageSaved() {
+    const item = getCurrentImageItem();
+    const imageUrl = getImageUrl(item);
+    if (!imageUrl) return false;
+    return getSavedImages().some(saved => saved.image === imageUrl);
+}
+
+function updateSaveButton() {
+    if (!viewerSaveBtn) return;
+    if (isCurrentImageSaved()) {
+        viewerSaveBtn.textContent = "✓ Saved";
+        viewerSaveBtn.classList.add("saved");
+    } else {
+        viewerSaveBtn.textContent = "🔖 Save";
+        viewerSaveBtn.classList.remove("saved");
+    }
+}
+
+function renderViewerImage() {
+    const item = getCurrentImageItem();
+    if (!item) return;
+
+    const imageUrl = getImageUrl(item);
+    const pageUrl = getPageUrl(item);
+    const title = getImageTitle(item);
+    const source = getSourceName(item);
+
+    viewerImage.src = imageUrl;
+    viewerImage.alt = title;
+    viewerTitle.textContent = source;
+    viewerImageTitle.textContent = title;
+    viewerDetailTitle.textContent = title;
+    viewerDetailUrl.textContent = pageUrl || source;
+    viewerSourceIcon.textContent = source ? source.charAt(0).toUpperCase() : "🌐";
+
+    viewerVisitBtn.disabled = !pageUrl;
+    viewerVisitBtn.style.opacity = pageUrl ? "1" : ".55";
+    updateSaveButton();
+    resetZoom();
+    updateRelatedActive();
+}
+
+function visitCurrentImage() {
+    const item = getCurrentImageItem();
+    const url = getPageUrl(item);
+    if (!url) return;
+    try {
+        const parsed = new URL(url, location.href);
+        if (parsed.protocol !== "http:" && parsed.protocol !== "https:") return;
+        window.open(parsed.href, "_blank", "noopener,noreferrer");
+    } catch {}
+}
+
+async function shareCurrentImage() {
+    const item = getCurrentImageItem();
+    const imageUrl = getImageUrl(item);
+    const pageUrl = getPageUrl(item) || imageUrl;
+    const title = getImageTitle(item);
+
+    try {
+        if (navigator.share) {
+            await navigator.share({ title, text: title, url: pageUrl });
+            return;
+        }
+    } catch (error) {
+        if (error && error.name === "AbortError") return;
+    }
+
+    try {
+        await navigator.clipboard.writeText(pageUrl || imageUrl);
+        alert("Image link copied.");
+    } catch {
+        prompt("Copy this link:", pageUrl || imageUrl);
+    }
+}
+
+function toggleSaveCurrentImage() {
+    const item = getCurrentImageItem();
+    const imageUrl = getImageUrl(item);
+    if (!imageUrl) return;
+
+    let saved = getSavedImages();
+    const existing = saved.findIndex(item => item.image === imageUrl);
+
+    if (existing >= 0) {
+        saved.splice(existing, 1);
+    } else {
+        saved.unshift({
+            image: imageUrl,
+            page: getPageUrl(item),
+            title: getImageTitle(item)
+        });
+        saved = saved.slice(0, 100);
+    }
+
+    localStorage.setItem("mysearch-saved-images", JSON.stringify(saved));
+    updateSaveButton();
+}
+
+function toggleViewerMenu() {
+    viewerMenuOpen = !viewerMenuOpen;
+    viewerMenu.classList.toggle("open", viewerMenuOpen);
+}
+
+function closeViewerMenu() {
+    viewerMenuOpen = false;
+    if (viewerMenu) viewerMenu.classList.remove("open");
+}
+
+async function copyCurrentImageUrl() {
+    const item = getCurrentImageItem();
+    const url = getImageUrl(item);
+    if (!url) return;
+    try {
+        await navigator.clipboard.writeText(url);
+        alert("Image URL copied.");
+    } catch {
+        prompt("Copy image URL:", url);
+    }
+    closeViewerMenu();
+}
+
+function downloadCurrentImage() {
+    const item = getCurrentImageItem();
+    const url = getImageUrl(item);
+    if (!url) return;
+    window.open(url, "_blank", "noopener,noreferrer");
+    closeViewerMenu();
+}
 
 /* =========================================================
-   NEXT / PREVIOUS
+   NEXT IMAGE
 ========================================================= */
 
 function nextImage() {
 
-    if (
-        !currentImages.length
-    ) {
-
+    if (!currentImages.length) {
         return;
-
     }
 
-
     currentImageIndex++;
-
 
     if (
         currentImageIndex >=
         currentImages.length
     ) {
 
-        currentImageIndex =
-            0;
+        currentImageIndex = 0;
 
     }
-
 
     renderViewerImage();
 
     renderRelatedImages();
-
 }
 
 
+/* =========================================================
+   PREVIOUS IMAGE
+========================================================= */
+
 function previousImage() {
 
-    if (
-        !currentImages.length
-    ) {
-
+    if (!currentImages.length) {
         return;
-
     }
 
-
     currentImageIndex--;
-
 
     if (
         currentImageIndex < 0
@@ -3607,54 +3173,45 @@ function previousImage() {
 
     }
 
-
     renderViewerImage();
 
     renderRelatedImages();
-
 }
 
 
 /* =========================================================
-   ZOOM
+   ZOOM IN
 ========================================================= */
 
 function zoomIn() {
 
-    zoomValue += .25;
+    zoomValue += 0.25;
 
-
-    if (
-        zoomValue > 5
-    ) {
+    if (zoomValue > 5) {
 
         zoomValue = 5;
 
     }
 
-
     applyTransform();
-
 }
 
 
+/* =========================================================
+   ZOOM OUT
+========================================================= */
+
 function zoomOut() {
 
-    zoomValue -= .25;
+    zoomValue -= 0.25;
 
+    if (zoomValue < 0.5) {
 
-    if (
-        zoomValue < .5
-    ) {
-
-        zoomValue = .5;
+        zoomValue = 0.5;
 
     }
 
-
-    if (
-        zoomValue <= 1
-    ) {
+    if (zoomValue <= 1) {
 
         translateX = 0;
 
@@ -3662,11 +3219,13 @@ function zoomOut() {
 
     }
 
-
     applyTransform();
-
 }
 
+
+/* =========================================================
+   RESET ZOOM
+========================================================= */
 
 function resetZoom() {
 
@@ -3677,9 +3236,12 @@ function resetZoom() {
     translateY = 0;
 
     applyTransform();
-
 }
 
+
+/* =========================================================
+   APPLY ZOOM TRANSFORM
+========================================================= */
 
 function applyTransform() {
 
@@ -3689,18 +3251,15 @@ function applyTransform() {
             ${translateY}px
         ) scale(${zoomValue})`;
 
-
     zoomLevel.textContent =
         Math.round(
             zoomValue * 100
         ) + "%";
 
-
     viewerImageWrap.classList.toggle(
         "zoomed",
         zoomValue > 1
     );
-
 }
 
 
@@ -3708,125 +3267,88 @@ function applyTransform() {
    MOUSE WHEEL ZOOM
 ========================================================= */
 
-viewerImageWrap.addEventListener(
-    "wheel",
-    event => {
+viewerImageWrap.addEventListener("wheel", event => {
+    if (!lightbox.classList.contains("show")) return;
+    event.preventDefault();
+    if (event.deltaY < 0) zoomIn();
+    else zoomOut();
+}, { passive: false });
 
-        if (
-            !lightbox.classList.contains(
-                "show"
-            )
-        ) {
+function distanceBetweenPointers() {
+    const points = Array.from(pointerCache.values());
+    if (points.length < 2) return 0;
+    return Math.hypot(
+        points[0].clientX - points[1].clientX,
+        points[0].clientY - points[1].clientY
+    );
+}
 
-            return;
+function pointerDown(event) {
+    if (!lightbox.classList.contains("show")) return;
+    pointerCache.set(event.pointerId, event);
+    viewerImageWrap.setPointerCapture?.(event.pointerId);
+    pointerMoved = false;
 
-        }
-
-
-        event.preventDefault();
-
-
-        if (
-            event.deltaY < 0
-        ) {
-
-            zoomIn();
-
-        } else {
-
-            zoomOut();
-
-        }
-
-    },
-    {
-        passive: false
-    }
-);
-
-
-/* =========================================================
-   DRAG IMAGE
-========================================================= */
-
-viewerImageWrap.addEventListener(
-    "mousedown",
-    event => {
-
-        if (
-            zoomValue <= 1
-        ) {
-
-            return;
-
-        }
-
-
-        dragging = true;
-
-
-        viewerImageWrap.classList.add(
-            "dragging"
-        );
-
-
-        dragStartX =
-            event.clientX;
-
-        dragStartY =
-            event.clientY;
-
-
-        startTranslateX =
-            translateX;
-
-        startTranslateY =
-            translateY;
-
-    }
-);
-
-
-window.addEventListener(
-    "mousemove",
-    event => {
-
-        if (!dragging) {
-            return;
-        }
-
-
-        translateX =
-            startTranslateX +
-            event.clientX -
-            dragStartX;
-
-
-        translateY =
-            startTranslateY +
-            event.clientY -
-            dragStartY;
-
-
-        applyTransform();
-
-    }
-);
-
-
-window.addEventListener(
-    "mouseup",
-    () => {
-
+    if (pointerCache.size === 2) {
+        pinchStartDistance = distanceBetweenPointers();
+        pinchStartZoom = zoomValue;
         dragging = false;
-
-        viewerImageWrap.classList.remove(
-            "dragging"
-        );
-
+        viewerImageWrap.classList.remove("dragging");
+        return;
     }
-);
 
+    if (event.pointerType === "mouse" && event.button !== 0) return;
+    if (zoomValue <= 1) return;
+
+    dragging = true;
+    viewerImageWrap.classList.add("dragging");
+    dragStartX = event.clientX;
+    dragStartY = event.clientY;
+    startTranslateX = translateX;
+    startTranslateY = translateY;
+}
+
+function pointerMove(event) {
+    if (!pointerCache.has(event.pointerId)) return;
+    pointerCache.set(event.pointerId, event);
+
+    if (pointerCache.size >= 2) {
+        const distance = distanceBetweenPointers();
+        if (!pinchStartDistance || !distance) return;
+
+        const ratio = distance / pinchStartDistance;
+        zoomValue = Math.min(5, Math.max(1, pinchStartZoom * ratio));
+        if (zoomValue <= 1) {
+            translateX = 0;
+            translateY = 0;
+        }
+        applyTransform();
+        pointerMoved = true;
+        return;
+    }
+
+    if (!dragging || zoomValue <= 1) return;
+
+    translateX = startTranslateX + event.clientX - dragStartX;
+    translateY = startTranslateY + event.clientY - dragStartY;
+    applyTransform();
+    pointerMoved = true;
+}
+
+function pointerUp(event) {
+    pointerCache.delete(event.pointerId);
+    if (pointerCache.size < 2) pinchStartDistance = 0;
+    if (pointerCache.size === 0) {
+        dragging = false;
+        viewerImageWrap.classList.remove("dragging");
+    }
+}
+
+viewerImageWrap.addEventListener("pointerdown", pointerDown);
+viewerImageWrap.addEventListener("pointermove", pointerMove);
+viewerImageWrap.addEventListener("pointerup", pointerUp);
+viewerImageWrap.addEventListener("pointercancel", pointerUp);
+viewerImageWrap.addEventListener("pointerleave", pointerUp);
 
 /* =========================================================
    RELATED IMAGES
@@ -3837,7 +3359,6 @@ function renderRelatedImages() {
     relatedGrid.innerHTML =
         "";
 
-
     currentImages.forEach(
         (item, index) => {
 
@@ -3846,10 +3367,8 @@ function renderRelatedImages() {
                     "div"
                 );
 
-
             card.className =
                 "related-card";
-
 
             if (
                 index ===
@@ -3862,20 +3381,24 @@ function renderRelatedImages() {
 
             }
 
-
             const img =
                 document.createElement(
                     "img"
                 );
 
+            /*
+               Related image also uses item.image.
+            */
 
             img.src =
                 item.image;
 
-
             img.alt =
+                item.title ||
                 "Related image";
 
+            img.loading =
+                "lazy";
 
             img.addEventListener(
                 "error",
@@ -3887,11 +3410,9 @@ function renderRelatedImages() {
                 }
             );
 
-
             card.appendChild(
                 img
             );
-
 
             card.addEventListener(
                 "click",
@@ -3907,16 +3428,18 @@ function renderRelatedImages() {
                 }
             );
 
-
             relatedGrid.appendChild(
                 card
             );
 
         }
     );
-
 }
 
+
+/* =========================================================
+   UPDATE RELATED ACTIVE
+========================================================= */
 
 function updateRelatedActive() {
 
@@ -3924,7 +3447,6 @@ function updateRelatedActive() {
         relatedGrid.querySelectorAll(
             ".related-card"
         );
-
 
     cards.forEach(
         (card, index) => {
@@ -3937,7 +3459,6 @@ function updateRelatedActive() {
 
         }
     );
-
 }
 
 
@@ -3955,10 +3476,7 @@ function createPagination(
     pagination.innerHTML =
         "";
 
-
-    if (
-        page > 1
-    ) {
+    if (page > 1) {
 
         pagination.appendChild(
             createPageButton(
@@ -3980,21 +3498,16 @@ function createPagination(
 
     }
 
-
     let start =
         Math.max(
             1,
             page - 3
         );
 
-
     let end =
         page + 3;
 
-
-    if (
-        totalPages > 0
-    ) {
+    if (totalPages > 0) {
 
         end =
             Math.min(
@@ -4004,10 +3517,7 @@ function createPagination(
 
     }
 
-
-    if (
-        start > 1
-    ) {
+    if (start > 1) {
 
         pagination.appendChild(
             createPageButton(
@@ -4017,10 +3527,7 @@ function createPagination(
             )
         );
 
-
-        if (
-            start > 2
-        ) {
+        if (start > 2) {
 
             const dots =
                 document.createElement(
@@ -4037,7 +3544,6 @@ function createPagination(
         }
 
     }
-
 
     for (
         let i = start;
@@ -4064,10 +3570,7 @@ function createPagination(
 
     }
 
-
-    if (
-        hasMore
-    ) {
+    if (hasMore) {
 
         pagination.appendChild(
             createPageButton(
@@ -4088,9 +3591,12 @@ function createPagination(
         );
 
     }
-
 }
 
+
+/* =========================================================
+   PAGE BUTTON
+========================================================= */
 
 function createPageButton(
     text,
@@ -4103,14 +3609,11 @@ function createPageButton(
             "button"
         );
 
-
     button.className =
         "page-btn";
 
-
     button.textContent =
         text;
-
 
     if (active) {
 
@@ -4120,15 +3623,12 @@ function createPageButton(
 
     }
 
-
     button.addEventListener(
         "click",
         callback
     );
 
-
     return button;
-
 }
 
 
@@ -4147,22 +3647,7 @@ function goBack() {
         closeLightbox();
 
         return;
-
     }
-
-
-    if (
-        siteViewer.classList.contains(
-            "show"
-        )
-    ) {
-
-        closeWebsiteViewer();
-
-        return;
-
-    }
-
 
     if (
         !document.body.classList.contains(
@@ -4173,9 +3658,7 @@ function goBack() {
         goHome();
 
         return;
-
     }
-
 
     if (
         window.history.length > 1
@@ -4184,7 +3667,6 @@ function goBack() {
         window.history.back();
 
     }
-
 }
 
 
@@ -4205,36 +3687,25 @@ function reloadPage() {
 
 function showComingSoon(name) {
 
-    closeWebsiteViewer();
-
-
     resultsBox.style.display =
         "block";
-
 
     imageGrid.style.display =
         "none";
 
-
     pagination.innerHTML =
         "";
-
 
     statusBox.textContent =
         name;
 
-
     resultsBox.innerHTML = `
-
         <div class="message">
-
-            🚧 ${escapeHtml(name)}
+            🚧
+            ${escapeHtml(name)}
             is not connected yet.
-
         </div>
-
     `;
-
 }
 
 
@@ -4242,45 +3713,11 @@ function showComingSoon(name) {
    DARK MODE
 ========================================================= */
 
-function updateDarkModeButton() {
-
-    const button =
-        document.getElementById(
-            "darkModeButton"
-        );
-
-
-    if (
-        document.body.classList.contains(
-            "dark"
-        )
-    ) {
-
-        button.textContent =
-            "☀️";
-
-        button.title =
-            "Light mode";
-
-    } else {
-
-        button.textContent =
-            "🌙";
-
-        button.title =
-            "Dark mode";
-
-    }
-
-}
-
-
 function toggleDarkMode() {
 
     document.body.classList.toggle(
         "dark"
     );
-
 
     localStorage.setItem(
         "mysearch-dark",
@@ -4290,10 +3727,6 @@ function toggleDarkMode() {
             ? "1"
             : "0"
     );
-
-
-    updateDarkModeButton();
-
 }
 
 
@@ -4308,9 +3741,6 @@ if (
     );
 
 }
-
-
-updateDarkModeButton();
 
 
 /* =========================================================
@@ -4332,35 +3762,70 @@ function showAbout() {
 ========================================================= */
 
 function escapeHtml(value) {
-
     return String(value)
-
-        .replace(
-            /&/g,
-            "&amp;"
-        )
-
-        .replace(
-            /</g,
-            "&lt;"
-        )
-
-        .replace(
-            />/g,
-            "&gt;"
-        )
-
-        .replace(
-            /"/g,
-            "&quot;"
-        )
-
-        .replace(
-            /'/g,
-            "&#039;"
-        );
-
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;")
+        .replace(/\"/g, "&quot;")
+        .replace(/'/g, "&#039;");
 }
+
+
+/* =========================================================
+   KEYBOARD CONTROLS FOR VIEWER
+========================================================= */
+
+
+document.addEventListener("click", event => {
+    if (viewerMenuOpen && viewerMenu && !viewerMenu.contains(event.target)) {
+        closeViewerMenu();
+    }
+});
+
+document.addEventListener(
+    "keydown",
+    event => {
+
+        if (
+            !lightbox.classList.contains(
+                "show"
+            )
+        ) {
+            return;
+        }
+
+        if (event.key === "Escape") {
+
+            closeLightbox();
+
+        }
+
+        if (event.key === "ArrowRight") {
+
+            nextImage();
+
+        }
+
+        if (event.key === "ArrowLeft") {
+
+            previousImage();
+
+        }
+
+        if (event.key === "+") {
+
+            zoomIn();
+
+        }
+
+        if (event.key === "-") {
+
+            zoomOut();
+
+        }
+
+    }
+);
 
 
 /* =========================================================
@@ -4370,6 +3835,5 @@ function escapeHtml(value) {
 renderHistory();
 
 </script>
-
 </body>
 </html>
